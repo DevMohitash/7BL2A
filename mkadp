@@ -88,7 +88,7 @@ ctl() {
 # Print device information prior to execution
 kmsg2 $(date) 
 kmsg2 "BL Battery Mode"
-kmsg2 "Verson 8.2"
+kmsg2 "ServerBased v8.3.1 Test"
 kmsg2 "----"
 kmsg2 "Prop Tweaks already applied"
 kmsg2 "while boot"
@@ -255,35 +255,35 @@ ctl /sys/devices/system/cpu/cpu7/cpufreq/scaling_governor schedutil
 
 # Fequency tweaks to all CPUs
 ctl /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us 0
-ctl /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us 4000
+ctl /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us 75000
 ctl /sys/devices/system/cpu/cpu0/cpufreq/schedutil/pl 0
 
 ctl /sys/devices/system/cpu/cpu1/cpufreq/schedutil/down_rate_limit_us 0
-ctl /sys/devices/system/cpu/cpu1/cpufreq/schedutil/up_rate_limit_us 4000
+ctl /sys/devices/system/cpu/cpu1/cpufreq/schedutil/up_rate_limit_us 75000
 ctl /sys/devices/system/cpu/cpu1/cpufreq/schedutil/pl 0
 
 ctl /sys/devices/system/cpu/cpu2/cpufreq/schedutil/down_rate_limit_us 0
-ctl /sys/devices/system/cpu/cpu2/cpufreq/schedutil/up_rate_limit_us 4000
+ctl /sys/devices/system/cpu/cpu2/cpufreq/schedutil/up_rate_limit_us 75000
 ctl /sys/devices/system/cpu/cpu2/cpufreq/schedutil/pl 0
 
 ctl /sys/devices/system/cpu/cpu3/cpufreq/schedutil/down_rate_limit_us 0
-ctl /sys/devices/system/cpu/cpu3/cpufreq/schedutil/up_rate_limit_us 4000
+ctl /sys/devices/system/cpu/cpu3/cpufreq/schedutil/up_rate_limit_us 75000
 ctl /sys/devices/system/cpu/cpu3/cpufreq/schedutil/pl 0
 
 ctl /sys/devices/system/cpu/cpu4/cpufreq/schedutil/down_rate_limit_us 0
-ctl /sys/devices/system/cpu/cpu4/cpufreq/schedutil/up_rate_limit_us 4500
+ctl /sys/devices/system/cpu/cpu4/cpufreq/schedutil/up_rate_limit_us 80000
 ctl /sys/devices/system/cpu/cpu4/cpufreq/schedutil/pl 0
 
 ctl /sys/devices/system/cpu/cpu5/cpufreq/schedutil/down_rate_limit_us 0
-ctl /sys/devices/system/cpu/cpu5/cpufreq/schedutil/up_rate_limit_us 4500
+ctl /sys/devices/system/cpu/cpu5/cpufreq/schedutil/up_rate_limit_us 80000
 ctl /sys/devices/system/cpu/cpu5/cpufreq/schedutil/pl 0
 
 ctl /sys/devices/system/cpu/cpu6/cpufreq/schedutil/down_rate_limit_us 0
-ctl /sys/devices/system/cpu/cpu6/cpufreq/schedutil/up_rate_limit_us 4500
+ctl /sys/devices/system/cpu/cpu6/cpufreq/schedutil/up_rate_limit_us 80000
 ctl /sys/devices/system/cpu/cpu6/cpufreq/schedutil/pl 0
 
 ctl /sys/devices/system/cpu/cpu7/cpufreq/schedutil/down_rate_limit_us 0
-ctl /sys/devices/system/cpu/cpu7/cpufreq/schedutil/up_rate_limit_us 5000
+ctl /sys/devices/system/cpu/cpu7/cpufreq/schedutil/up_rate_limit_us 95000
 ctl /sys/devices/system/cpu/cpu7/cpufreq/schedutil/pl 0
 
 ctl /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1385600
@@ -513,6 +513,10 @@ ctl /sys/module/tcp_cubic/parameters/hystart_detect 2
 
 # Misc Kernel Teaks
 ctl /sys/kernel/debug/sched_features NO_NEXT_BUDDY
+ctl /sys/kernel/debug/sched_features NO_GENTLE_FAIR_SLEEPERS
+ctl /sys/kernel/debug/sched_features NO_TTWU_QUEUE
+ctl /sys/kernel/debug/sched_features NO_RT_RUNTIME_SHARE
+ctl /sys/kernel/debug/sched_features NO_AFFINE_WAKEUPS
 
 for cpu in /sys/devices/system/cpu/*/sched_load_boost
 do
