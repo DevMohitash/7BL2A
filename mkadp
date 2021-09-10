@@ -586,6 +586,14 @@ for i in ` find /sys/module -name debug_mask`; do
 	ctl $i 0
 done
 
+# Adjust a few display props for improved performance as well as overall reduced stuttering and power consumption;
+ctl /sys/kernel/debug/mdss_panel_fb0/intf0/mipi/hw_vsync_mode 0
+ctl /sys/kernel/debug/mdss_panel_fb0/intf0/mipi/vsync_enable 0
+ctl /sys/kernel/debug/mdss_panel_fb0/intf0/bl_max 175
+ctl /sys/kernel/debug/mdss_panel_fb0/intf0/brightness_max 175
+ctl /sys/kernel/debug/mdss_panel_fb0/intf0/panel_ack_disabled Y
+ctl /sys/kernel/debug/mdss_panel_fb0/intf0/partial_update_enabled 1
+
 am start -a android.intent.action.MAIN -e toasttext "Finally...Kernel/CPU/GPU Tweaks Applied" -n mkadp.toast/.MainActivity
 
 kmsg2 $(date) 
