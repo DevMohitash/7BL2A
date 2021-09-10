@@ -95,7 +95,7 @@ ctl() {
 # Print device information prior to execution
 kmsg2 $(date) 
 kmsg2 "ButterLimits Mode"
-kmsg2 "Verson 8.2"
+kmsg2 "Verson 8.3.1"
 kmsg2 "----"
 kmsg2 "Prop Tweaks already applied"
 kmsg2 "while boot"
@@ -302,7 +302,14 @@ ctl /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq 2219200
 ctl /sys/devices/system/cpu/cpu5/cpufreq/scaling_max_freq 2219200
 ctl /sys/devices/system/cpu/cpu6/cpufreq/scaling_max_freq 2219200
 
-ctl /sys/devices/system/cpu/cpu6/online 0
+ctl /sys/devices/system/cpu/cpu0/online 1
+ctl /sys/devices/system/cpu/cpu1/online 1
+ctl /sys/devices/system/cpu/cpu2/online 1
+ctl /sys/devices/system/cpu/cpu3/online 1
+ctl /sys/devices/system/cpu/cpu4/online 1
+ctl /sys/devices/system/cpu/cpu5/online 1
+ctl /sys/devices/system/cpu/cpu6/online 1
+ctl /sys/devices/system/cpu/cpu7/online 1
 
 # Other CPU tweaks
 ctl /dev/cpuctl/cpu.shares 1024
