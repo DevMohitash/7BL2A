@@ -96,7 +96,7 @@ ctl() {
 kmsg2 $(date) 
 kmsg2 "ButterLimits Mode"
 kmsg2 "SeverBased v8.3.1 Test"
-kmsg2 "Last Updated on 10-Sep-2021 20:25 IST"
+kmsg2 "Last Updated on 11-Sep-2021 11:09 [HH:MM] IST"
 kmsg2 "----"
 kmsg2 "Prop Tweaks already applied"
 kmsg2 "while boot"
