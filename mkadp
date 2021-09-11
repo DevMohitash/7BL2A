@@ -258,35 +258,35 @@ ctl /sys/devices/system/cpu/cpu6/cpufreq/scaling_governor schedutil
 ctl /sys/devices/system/cpu/cpu7/cpufreq/scaling_governor schedutil
 
 # Fequency tweaks to all CPUs
-ctl /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us 0
+ctl /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us 200
 ctl /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us 75000
 ctl /sys/devices/system/cpu/cpu0/cpufreq/schedutil/pl 0
 
-ctl /sys/devices/system/cpu/cpu1/cpufreq/schedutil/down_rate_limit_us 0
+ctl /sys/devices/system/cpu/cpu1/cpufreq/schedutil/down_rate_limit_us 200
 ctl /sys/devices/system/cpu/cpu1/cpufreq/schedutil/up_rate_limit_us 75000
 ctl /sys/devices/system/cpu/cpu1/cpufreq/schedutil/pl 0
 
-ctl /sys/devices/system/cpu/cpu2/cpufreq/schedutil/down_rate_limit_us 0
+ctl /sys/devices/system/cpu/cpu2/cpufreq/schedutil/down_rate_limit_us 200
 ctl /sys/devices/system/cpu/cpu2/cpufreq/schedutil/up_rate_limit_us 75000
 ctl /sys/devices/system/cpu/cpu2/cpufreq/schedutil/pl 0
 
-ctl /sys/devices/system/cpu/cpu3/cpufreq/schedutil/down_rate_limit_us 0
+ctl /sys/devices/system/cpu/cpu3/cpufreq/schedutil/down_rate_limit_us 200
 ctl /sys/devices/system/cpu/cpu3/cpufreq/schedutil/up_rate_limit_us 75000
 ctl /sys/devices/system/cpu/cpu3/cpufreq/schedutil/pl 0
 
-ctl /sys/devices/system/cpu/cpu4/cpufreq/schedutil/down_rate_limit_us 0
+ctl /sys/devices/system/cpu/cpu4/cpufreq/schedutil/down_rate_limit_us 200
 ctl /sys/devices/system/cpu/cpu4/cpufreq/schedutil/up_rate_limit_us 80000
 ctl /sys/devices/system/cpu/cpu4/cpufreq/schedutil/pl 0
 
-ctl /sys/devices/system/cpu/cpu5/cpufreq/schedutil/down_rate_limit_us 0
+ctl /sys/devices/system/cpu/cpu5/cpufreq/schedutil/down_rate_limit_us 200
 ctl /sys/devices/system/cpu/cpu5/cpufreq/schedutil/up_rate_limit_us 80000
 ctl /sys/devices/system/cpu/cpu5/cpufreq/schedutil/pl 0
 
-ctl /sys/devices/system/cpu/cpu6/cpufreq/schedutil/down_rate_limit_us 0
+ctl /sys/devices/system/cpu/cpu6/cpufreq/schedutil/down_rate_limit_us 200
 ctl /sys/devices/system/cpu/cpu6/cpufreq/schedutil/up_rate_limit_us 80000
 ctl /sys/devices/system/cpu/cpu6/cpufreq/schedutil/pl 0
 
-ctl /sys/devices/system/cpu/cpu7/cpufreq/schedutil/down_rate_limit_us 0
+ctl /sys/devices/system/cpu/cpu7/cpufreq/schedutil/down_rate_limit_us 200
 ctl /sys/devices/system/cpu/cpu7/cpufreq/schedutil/up_rate_limit_us 90000
 ctl /sys/devices/system/cpu/cpu7/cpufreq/schedutil/pl 0
 
