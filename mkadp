@@ -88,8 +88,8 @@ ctl() {
 # Print device information prior to execution
 kmsg2 $(date) 
 kmsg2 "BL Battery Mode"
-kmsg2 "ServerBased v8.3.3 Test"
-kmsg2 "LastUpdated 12-Sep-2021 14:16 [HH:MM] IST"
+kmsg2 "ServerBased v8.3.4 Test"
+kmsg2 "LastUpdated 13-Sep-2021 13:46 [HH:MM] IST"
 kmsg2 "----"
 kmsg2 "Prop Tweaks already applied"
 kmsg2 "while boot"
