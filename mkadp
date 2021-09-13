@@ -87,31 +87,16 @@ _ctl() {
 	kmsg "$1: $curval => $2"
 }
 
-# Safely write value to file
-_ctl2() {
-	# Fetch the current key value
-	local curval=`cat "$1" 2> /dev/null`
-
-	# Write the new value
-	echo "$2" > "$1" 2> /dev/null
-
-	kmsg "$1: $curval => $2"
-}
-
 # Background fork ctl function
 ctl() {
 	_ctl $@
-}
-
-ctl2() {
-	_ctl2 $@
 }
 
 # Print device information prior to execution
 kmsg2 $(date) 
 kmsg2 "ButterLimits Mode"
 kmsg2 "SeverBased v8.3.3 Test"
-kmsg2 "LastUpdated 12-Sep-2021 14:16 [HH:MM] IST"
+kmsg2 "LastUpdated 13-Sep-2021 13:32 [HH:MM] IST"
 kmsg2 "----"
 kmsg2 "Prop Tweaks already applied"
 kmsg2 "while boot"
