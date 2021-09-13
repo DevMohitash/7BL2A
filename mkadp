@@ -3,13 +3,13 @@
 #VARIABLES===============================#
 BB=/data/adb/magisk/busybox
 CLOG=/data/media/0/YourBLchanges.log
-BRANCH="Extreme-Profile"
+BRANCH="Extremely-Aggressive-Profile"
 #=======================================#
 #=======================================#
 
-am start -a android.intent.action.MAIN -e toasttext "Enabling Extreme. This can take few minutes" -n mkadp.toast/.MainActivity
+am start -a android.intent.action.MAIN -e toasttext "Enabling ButterFly-ExtremeAggressive. This can take few minutes" -n mkadp.toast/.MainActivity
 
-$BB cp -rf /data/adb/modules/butterlimitsforop7poos11uni/system/etc/mkadp/extreme/module.prop /data/adb/modules/butterlimitsforop7poos11uni
+$BB cp -rf /data/adb/modules/butterlimitsforop7poos11uni/system/etc/mkadp/extremely/module.prop /data/adb/modules/butterlimitsforop7poos11uni
 
 kmsg3() {
 	echo -e "[*] $@" >> $CLOG
@@ -90,10 +90,11 @@ ctl() {
 sync
 
 # Print device information prior to execution
-kmsg2 $(date) 
-kmsg2 "ButterLimits"
-kmsg2 "SeverBased v8.3.3 Test"
-kmsg2 "Last Updated on 13-Sep-2021 13:48 [HH:MM] IST"
+kmsg2 $(date)
+kmsg2 "ButterFly"
+kmsg2 "Extremely Aggressive"
+kmsg2 "SeverBased v8.3.1 Test"
+kmsg2 "Last Updated on 11-Sep-2021 11:30 [HH:MM] IST"
 kmsg2 "----"
 kmsg2 "Prop Tweaks already applied"
 kmsg2 "while boot"
@@ -125,31 +126,26 @@ kmsg $(date)
 kmsg "Killing one server done"
 kmsg "----"
 
-am start -a android.intent.action.MAIN -e toasttext "Applying UGMS Doze" -n mkadp.toast/.MainActivity
-
-kmsg2 "UGMS Doze on the go..."
-kmsg2 "----"
-
 # GMS Doze
 
-cmd appops set com.google.android.gms BOOT_COMPLETED ignore
-cmd appops set com.google.android.ims BOOT_COMPLETED ignore
-cmd appops set com.google.android.gsf WAKE_LOCK ignore
-cmd appops set com.google.android.gms AUTO_START ignore
-cmd appops set com.google.android.ims AUTO_START ignore
-cmd appops set com.google.android.ims WAKE_LOCK ignore
+cmd appops set com.google.android.gms BOOT_COMPLETED allow
+cmd appops set com.google.android.ims BOOT_COMPLETED allow
+cmd appops set com.google.android.gsf WAKE_LOCK allow
+cmd appops set com.google.android.gms AUTO_START allow
+cmd appops set com.google.android.ims AUTO_START allow
+cmd appops set com.google.android.ims WAKE_LOCK allow
 
-$pmd 'com.google.android.gms/com.google.android.gms.mdm.receivers.MdmDeviceAdminReceiver'   | tee -a $LOG2A
-$pmd 'com.google.android.gms/com.google.android.gms.auth.managed.admin.DeviceAdminReceiver'   | tee -a $LOG2A
-$pmd 'com.google.android.gms/com.google.android.gms.auth.setup.devicesignals.LockScreenService'   | tee -a $LOG2A
-$pmd 'com.google.android.gms/com.google.android.gms.mdm.receivers.MdmDeviceAdminReceiver'   | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.gms.mdm.receivers.MdmDeviceAdminReceiver'   | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.gms.auth.managed.admin.DeviceAdminReceiver'   | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.gms.auth.setup.devicesignals.LockScreenService'   | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.gms.mdm.receivers.MdmDeviceAdminReceiver'   | tee -a $LOG2A
 
 # Some stuffs to be enabled
 
 am start -a android.intent.action.MAIN -e toasttext "Enabling some services that were disabled by other Profiles" -n mkadp.toast/.MainActivity
 
 kmsg2 "Enables stuffs that are"
-kmsg2 "disabled by other mods..."
+kmsg2 "disabled by other mods if any..."
 kmsg2 "----"
 
 $pme --user 0 'com.google.android.gms/.phenotype.service.sync.PhenotypeConfigurator' | tee -a $LOG2A
@@ -216,23 +212,17 @@ ctl /sys/devices/system/cpu/cpu6/cpufreq/scaling_governor schedutil
 ctl /sys/devices/system/cpu/cpu7/cpufreq/scaling_governor schedutil
 
 # Fequency tweaks to all CPUs
-ctl /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us 0
+ctl /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us 75000
 ctl /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us 0
 ctl /sys/devices/system/cpu/cpu0/cpufreq/schedutil/pl 0
 
-ctl /sys/devices/system/cpu/cpu4/cpufreq/schedutil/down_rate_limit_us 0
+ctl /sys/devices/system/cpu/cpu4/cpufreq/schedutil/down_rate_limit_us 75000
 ctl /sys/devices/system/cpu/cpu4/cpufreq/schedutil/up_rate_limit_us 0
 ctl /sys/devices/system/cpu/cpu4/cpufreq/schedutil/pl 0
 
-ctl /sys/devices/system/cpu/cpu7/cpufreq/schedutil/down_rate_limit_us 0
+ctl /sys/devices/system/cpu/cpu7/cpufreq/schedutil/down_rate_limit_us 75000
 ctl /sys/devices/system/cpu/cpu7/cpufreq/schedutil/up_rate_limit_us 0
 ctl /sys/devices/system/cpu/cpu7/cpufreq/schedutil/pl 0
-
-ctl /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1785600
-ctl /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 300000
-
-ctl /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq 241920
-ctl /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 710400
 
 ctl /sys/devices/system/cpu/cpu0/online 1
 ctl /sys/devices/system/cpu/cpu1/online 1
@@ -247,7 +237,7 @@ ctl /sys/devices/system/cpu/cpu0/core_ctl/busy_down_thres 0
 ctl /sys/devices/system/cpu/cpu0/core_ctl/busy_up_thres 0
 
 ctl /sys/devices/system/cpu/cpu4/core_ctl/max_cpus 3
-ctl /sys/devices/system/cpu/cpu4/core_ctl/min_cpus 1
+ctl /sys/devices/system/cpu/cpu4/core_ctl/min_cpus 2
 
 # Other CPU tweaks
 ctl 1024 /dev/cpuctl/cpu.shares
@@ -311,7 +301,7 @@ ctl /proc/sys/vm/vfs_cache_pressure 94
 ctl /proc/sys/vm/overcommit_ratio 50
 ctl /proc/sys/vm/extra_free_kbytes 24300
 ctl /proc/sys/kernel/random/read_wakeup_threshold 64
-ctl /proc/sys/kernel/random/write_wakeup_threshold 1712
+ctl /proc/sys/kernel/random/write_wakeup_threshold 2200
 ctl /sys/module/lowmemorykiller/parameters/minfree "21816,29088,36360,43632,50904,65448"
 ctl /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 0
 
@@ -419,9 +409,9 @@ am start -a android.intent.action.MAIN -e toasttext "Still Applying...Please Wai
 # Fast Sensivity in Game
 ctl /dev/stune/background/schedtune.boost 15
 ctl /dev/stune/foreground/schedtune.boost 15
-ctl /dev/stune/rt/schedtune.boost 10
+ctl /dev/stune/rt/schedtune.boost 1
 ctl /dev/stune/top-app/schedtune.boost 25
-ctl /dev/stune/schedtune.boost 10
+ctl /dev/stune/schedtune.boost 100
 ctl /dev/stune/nnapi-hal/schedtune.boost 1
 ctl /dev/stune/nnapi-hal/schedtune.prefer_idle 0
 ctl /dev/stune/top-app/schedtune.prefer_idle 0
@@ -445,9 +435,9 @@ ctl /proc/sys/kernel/sched_boost 1
 ctl /sys/module/boost_control/parameters/app_launch_boost_ms 3000
 
 # GPU frequency based throttling;
-ctl /sys/class/kgsl/kgsl-3d0/throttling 1
-ctl /sys/class/kgsl/kgsl-3d0/default_pwrlevel 4
-ctl /sys/class/kgsl/kgsl-3d0/bus_split 1
+ctl /sys/class/kgsl/kgsl-3d0/throttling 0
+ctl /sys/class/kgsl/kgsl-3d0/default_pwrlevel 0
+ctl /sys/class/kgsl/kgsl-3d0/bus_split 0
 
 #1028 readahead KB
 ctl /sys/block/sde/queue/read_ahead_kb 128
@@ -463,7 +453,11 @@ done
 ctl /sys/module/tcp_cubic/parameters/hystart_detect 2
 
 # Misc Kernel Teaks
-#ctl /sys/kernel/debug/sched_features NO_NEXT_BUDDY
+ctl /sys/kernel/debug/sched_features NEXT_BUDDY
+ctl /sys/kernel/debug/sched_features GENTLE_FAIR_SLEEPERS
+ctl /sys/kernel/debug/sched_features TTWU_QUEUE
+ctl /sys/kernel/debug/sched_features RT_RUNTIME_SHARE
+ctl /sys/kernel/debug/sched_features AFFINE_WAKEUPS
 
 for cpu in /sys/devices/system/cpu/*/sched_load_boost
 do
@@ -709,7 +703,7 @@ kmsg $(date)
 kmsg "MKADP HAS EXECUTED TASK SUCCESSFULLY. ENJOY!"
 
 kmsg3 $(date) 
-kmsg3 "Extreme Mode Enabled"
+kmsg3 "Extremely Aggressive Mode Enabled"
 kmsg3 "----"
 
 $$BB cp -rf /data/media/0/YourBLchanges.log /data/data/com.mkadp.blapptwotbone/files/YourBLchanges.log
