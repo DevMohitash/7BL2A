@@ -29,9 +29,9 @@ LOGFU=/data/media/0/butterlimits.log
 #=======================================#
 LOGBL1=/data/media/0/.mkadp.log
 LOGBL2=/data/media/0/butterlimits.log
-LOG2=/data/data/com.mkadp.blapptwotbone/files/butterlimits.log
-LOG2A=/data/data/com.mkadp.blapptwotbone/files/zbutterlimits.log
-LOG2B=/data/data/com.mkadp.blapptwotbone/files/zzbutterlimits.log
+LOG2=/data/data/com.mkadp.blapptwotbonefone/files/butterlimits.log
+LOG2A=/data/data/com.mkadp.blapptwotbonefone/files/zbutterlimits.log
+LOG2B=/data/data/com.mkadp.blapptwotbonefone/files/zzbutterlimits.log
 FRACTION=75
 RAM=$(free -m | awk '/Mem:/{print $2}')
 CPUS=`grep -c processor /proc/cpuinfo`
@@ -732,14 +732,14 @@ kmsg3 $(date)
 kmsg3 "ButterLimits Enabled"
 kmsg3 "----"
 
-$BB cp -rf /data/media/0/YourBLchanges.log /data/data/com.mkadp.blapptwotbone/files/YourBLchanges.log
+$BB cp -rf /data/media/0/YourBLchanges.log /data/data/com.mkadp.blapptwotbonefone/files/YourBLchanges.log
 
 am start -a android.intent.action.MAIN -e toasttext "Wiping Cache" -n mkadp.toast/.MainActivity
 
 $BB rm -rf /cache/*	
 
 am start -a android.intent.action.MAIN -e toasttext "All Done. Thankyou for your patience" -n mkadp.toast/.MainActivity
-am start -n com.mkadp.blapptwotbone/.activities.LogsActivity
+am start -n com.mkadp.blapptwotbonefone/.activities.LogsActivity
 
 dumpsys deviceidle enable all;
 dumpsys deviceidle enabled all;
