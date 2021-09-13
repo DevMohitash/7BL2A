@@ -730,7 +730,7 @@ kmsg2 "----"
 ctl /dev/cpuset/audio-app/cpus 1-2
 #ctl /dev/cpuset/background/cpus 0-3
 #ctl /dev/cpuset/foreground/cpus 0-2
-#ctl /dev/cpuset/top-app/cpu 0-6
+ctl /dev/cpuset/top-app/cpu 0-6
 ctl /dev/cpuset/camera-daemon/cpus 0-3
 ctl /dev/cpuset/dislay/cpus 4-6
 #ctl /dev/cpuset/system-background/cpus 1-3
