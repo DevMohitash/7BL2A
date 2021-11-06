@@ -11,7 +11,7 @@ kmsg3() {
 	echo -e "[*] $@" >> $CLOG
 }
 
-am start -a android.intent.action.MAIN -e toasttext "Enabling ButterLimits-Balanced. This can take few mins." -n mkadp.toast/.MainActivity
+am start -a android.intent.action.MAIN -e toasttext "Enabling Balanced Profile. This can take few mins." -n mkadp.toast/.MainActivity
 
 am start -a android.intent.action.MAIN -e toasttext "Preparing..." -n mkadp.toast/.MainActivity
 
