@@ -32,10 +32,8 @@ LOGBL2=/data/media/0/butterlimits.log
 LOG2=/data/data/com.mkadp.blapptwotbonefone/files/butterlimits.log
 LOG2A=/data/data/com.mkadp.blapptwotbonefone/files/zbutterlimits.log
 LOG2B=/data/data/com.mkadp.blapptwotbonefone/files/zzbutterlimits.log
-FRACTION=75
-RAM=$(free -m | awk '/Mem:/{print $2}')
-CPUS=`grep -c processor /proc/cpuinfo`
-SIZE=$(((RAM * FRACTION / 100) * 1048576))
+IDPATH=/data/adb/modules/butterlimitsforop7poos11uni
+MKADPP=$IDPATH/system/etc/mkadp/P
 pme='pm enable'
 pmd='pm disable'
 #=======================================#
@@ -749,4 +747,62 @@ dumpsys deviceidle force-idle
 settings put global aggressive_idle_enabled "1"
 settings put global aggressive_standby_enabled "1"
 
-exit 0
+FILEBAT=$MKADPP/bat
+FILEBAL=$MKADPP/bal
+FILEEXT=$MKADPP/ext
+FILEEA=$MKADPP/ea
+
+if [ -f "$FILEBAT" ]; then
+	rm -rf $FILEBAT
+	echo -n >$FILEBAL
+	exit 0
+else
+	if [ -f "$FILEBAL" ]; then
+		exit 0
+	else
+		if [ -f "$FILEEXT" ]; then
+			rm -rf $FILEEXT
+			echo -n >$FILEBAL
+			am start -a android.intent.action.MAIN -e toasttext "You were on Extreme Profile" -n mkadp.toast/.MainActivity
+			sleep 2
+			am start -a android.intent.action.MAIN -e toasttext "Reboot needed" -n mkadp.toast/.MainActivity
+			sleep 1
+			am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 5 secs..." -n mkadp.toast/.MainActivity
+			sleep 1
+			am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 4 secs..." -n mkadp.toast/.MainActivity
+			sleep 1
+			am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 3 secs..." -n mkadp.toast/.MainActivity
+			sleep 1
+			am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 2 secs..." -n mkadp.toast/.MainActivity
+			sleep 1
+			am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 1 sec..." -n mkadp.toast/.MainActivity
+			sleep 1
+			am start -a android.intent.action.MAIN -e toasttext "Device is rebooting..." -n mkadp.toast/.MainActivity
+			sleep 1
+			reboot
+		else
+			if [ -f "$FILEEA" ]; then
+				rm -rf $FILEEA
+				echo -n >$FILEBAL
+				am start -a android.intent.action.MAIN -e toasttext "You were on Aggressive Profile" -n mkadp.toast/.MainActivity
+				sleep 2
+				am start -a android.intent.action.MAIN -e toasttext "Reboot needed" -n mkadp.toast/.MainActivity
+				sleep 1
+				am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 5 secs..." -n mkadp.toast/.MainActivity
+				sleep 1
+				am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 4 secs..." -n mkadp.toast/.MainActivity
+				sleep 1
+				am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 3 secs..." -n mkadp.toast/.MainActivity
+				sleep 1
+				am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 2 secs..." -n mkadp.toast/.MainActivity
+				sleep 1
+				am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 1 sec..." -n mkadp.toast/.MainActivity
+				sleep 1
+				am start -a android.intent.action.MAIN -e toasttext "Device is rebooting..." -n mkadp.toast/.MainActivity
+				sleep 1
+				reboot
+			fi
+		fi
+	fi
+fi
+		
