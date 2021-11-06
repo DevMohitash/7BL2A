@@ -24,13 +24,11 @@ LOGFU=/data/media/0/butterlimits.log
 #=======================================#
 LOGBL1=/data/media/0/.mkadp.log
 LOGBL2=/data/media/0/butterlimits.log
-LOG2=/data/data/com.mkadp.blapptwotbonefone/files/butterlimits.log
-LOG2A=/data/data/com.mkadp.blapptwotbonefone/files/zbutterlimits.log
-LOG2B=/data/data/com.mkadp.blapptwotbonefone/files/zzbutterlimits.log
-FRACTION=75
-RAM=$(free -m | awk '/Mem:/{print $2}')
-CPUS=`grep -c processor /proc/cpuinfo`
-SIZE=$(((RAM * FRACTION / 100) * 1048576))
+LOG2=/data/data/com.mkadp.blappeftext/files/butterlimits.log
+LOG2A=/data/data/com.mkadp.blappeftext/files/zbutterlimits.log
+LOG2B=/data/data/com.mkadp.blappeftext/files/zzbutterlimits.log
+IDPATH=/data/adb/modules/butterlimitsforop7poos11uni
+MKADPP=$IDPATH/system/etc/mkadp/P
 pme='pm enable'
 pmd='pm disable'
 #=======================================#
@@ -93,8 +91,8 @@ sync
 kmsg2 $(date)
 kmsg2 "ButterLimits"
 kmsg2 "Extremely Aggressive"
-kmsg2 "SeverBased v8.3.3 Test"
-kmsg2 "Last Updated on 13-Sep-2021 14:02 [HH:MM] IST"
+kmsg2 "SeverBased v9.6.0"
+kmsg2 "Last Updated on 16-Oct-2021 15:50 [HH:MM] IST"
 kmsg2 "----"
 kmsg2 "Prop Tweaks already applied"
 kmsg2 "while boot"
@@ -240,7 +238,7 @@ ctl /sys/devices/system/cpu/cpu4/core_ctl/max_cpus 3
 ctl /sys/devices/system/cpu/cpu4/core_ctl/min_cpus 2
 
 # Other CPU tweaks
-ctl 1024 /dev/cpuctl/cpu.shares
+#ctl /dev/cpuctl/cpu.shares 1024
 
 
 # Force switch off some headache created by kernel logging in case kernel have it enabled;
@@ -268,7 +266,7 @@ ctl /proc/sys/kernel/sched_rt_runtime_us 955000
 #ctl /proc/sys/net/core/netdev_max_backlog 128
 #ctl /proc/sys/net/core/netdev_tstamp_prequeue 0
 #ctl /proc/sys/net/ipv4/ipfrag_time 24
-ctl /proc/sys/net/ipv4/tcp_congestion_control westwood
+#ctl /proc/sys/net/ipv4/tcp_congestion_control westwood
 #ctl /proc/sys/net/ipv4/tcp_ecn 1
 #ctl /proc/sys/net/ipv4/tcp_fastopen 3
 #ctl /proc/sys/net/ipv4/tcp_sack 1
@@ -281,6 +279,40 @@ ctl /proc/sys/net/ipv4/tcp_congestion_control westwood
 #ctl /proc/sys/net/ipv4/tcp_no_metrics_save 1
 #ctl /proc/sys/net/ipv4/tcp_slow_start_after_idle 0
 #ctl /proc/sys/net/ipv6/ip6frag_time 48
+#
+ctl /proc/sys/net/ipv4/tcp_keepalive_probes 5
+ctl /proc/sys/net/ipv4/tcp_fin_timeout 30
+ctl /proc/sys/net/ipv4/tcp_moderate_rcvbuf 1
+ctl /proc/sys/net/ipv4/udp_rmem_min 6144
+ctl /proc/sys/net/ipv4/udp_wmem_min 6144
+ctl /proc/sys/net/ipv4/tcp_rfc1337 1
+ctl /proc/sys/net/ipv4/ip_no_pmtu_disc 0
+ctl /proc/sys/net/ipv4/tcp_ecn 0
+ctl /proc/sys/net/ipv4/tcp_wmem "6144 87380 2097152"
+ctl /proc/sys/net/ipv4/tcp_rmem "6144 87380 2097152"
+ctl /proc/sys/net/ipv4/tcp_synack_retries 2
+ctl /proc/sys/net/ipv4/tcp_syn_retries 2
+ctl /proc/sys/net/ipv4/ip_forward 0
+ctl /proc/sys/net/ipv4/tcp_window_scaling 1
+ctl /proc/sys/net/ipv4/conf/default/accept_source_route 0
+ctl /proc/sys/net/ipv4/conf/all/accept_source_route 0
+ctl /proc/sys/net/ipv4/conf/all/accept_redirects 0
+ctl /proc/sys/net/ipv4/conf/default/accept_redirects 0
+ctl /proc/sys/net/ipv4/conf/all/secure_redirects 0
+ctl /proc/sys/net/ipv4/conf/default/secure_redirects 0
+ctl /proc/sys/net/ipv4/tcp_tw_recycle 1
+ctl /proc/sys/net/ipv4/ip_dynaddr 0
+ctl /proc/sys/net/ipv4/tcp_timestamps 0
+ctl /proc/sys/net/ipv4/tcp_max_tw_buckets 1440000
+ctl /proc/sys/net/ipv4/tcp_mem "57344 57344 524288"
+ctl /proc/sys/net/ipv4/tcp_max_tw_buckets 1440000
+ctl /proc/sys/net/core/rmem_max 2097152
+ctl /proc/sys/net/core/wmem_max 2097152
+ctl /proc/sys/net/core/rmem_default 262144
+ctl /proc/sys/net/core/wmem_default 262144
+ctl /proc/sys/net/core/optmem_max 20480
+ctl /proc/sys/net/core/netdev_max_backlog 2500
+ctl /proc/sys/net/unix/max_dgram_qlen 50
 
 # VMemory tweaks big improved balance between performance and battery life;
 ctl /proc/sys/vm/drop_caches 1
@@ -392,8 +424,16 @@ ctl "${g}"/rq_affinity 2
 ctl "${g}"/iosched/slice_idle 0
 ctl "${g}"/iosched/low_latency 0
 ctl "${g}"/scheduler cfq
-ctl "${g}"/read_ahead_kb 128
+ctl "${g}"/read_ahead_kb 256
+ctl "${g}"/nr_requests 8192
 done
+
+#am start -a android.intent.action.MAIN -e toasttext "Applying Mount-Related Tweaks..." -n mkadp.toast/.MainActivity
+# Remount all partitions with noatime
+#for mkk in $($BB mount | grep relatime | cut -d " " -f3);
+#do
+#$BB mount -o remount,noatime $mkk;
+#done
 
 am start -a android.intent.action.MAIN -e toasttext "Still Applying-01...Please Wait" -n mkadp.toast/.MainActivity
 
@@ -683,15 +723,6 @@ kmsg2 $(date)
 kmsg2 "ZRAM Tweaked"
 kmsg2 "----"
 #
-kmsg2 $(date) 
-kmsg2 "CPUSets"
-kmsg2 "----"
-ctl /dev/cpuset/audio-app/cpus 0-3
-ctl /dev/cpuset/top-app/cpu 0-7
-ctl /dev/cpuset/camera-daemon/cpus 0-3
-ctl /dev/cpuset/dislay/cpus 4-7
-ctl /dev/cpuset/system-background/cpus 0-3
-ctl /dev/cpuset/restricted/cpus 6-7
 
 kmsg2 $(date) 
 kmsg2 "All Done."
@@ -706,13 +737,70 @@ kmsg3 $(date)
 kmsg3 "Extremely Aggressive Mode Enabled"
 kmsg3 "----"
 
-$$BB cp -rf /data/media/0/YourBLchanges.log /data/data/com.mkadp.blapptwotbonefone/files/YourBLchanges.log
+$$BB cp -rf /data/media/0/YourBLchanges.log /data/data/com.mkadp.blappeftext/files/YourBLchanges.log
 
 am start -a android.intent.action.MAIN -e toasttext "Wiping Cache" -n mkadp.toast/.MainActivity
 
 $BB rm -rf /cache/*	
 
 am start -a android.intent.action.MAIN -e toasttext "All Done. Thankyou for your patience" -n mkadp.toast/.MainActivity
-am start -n com.mkadp.blapptwotbonefone/.activities.LogsActivity
+am start -n com.mkadp.blappeftext/.activities.LogsActivity
 
-exit 0
+FILEBAT=$MKADPP/bat
+FILEBAL=$MKADPP/bal
+FILEEXT=$MKADPP/ext
+FILEEA=$MKADPP/ea
+
+if [ -f "$FILEEXT" ]; then
+	rm -rf $FILEEXT
+	echo -n >$FILEEA
+	exit 0
+else
+	if [ -f "$FILEEA" ]; then
+		exit 0
+	else
+		if [ -f "$FILEBAT" ]; then
+			rm -rf $FILEEXT
+			echo -n >$FILEBAL
+			am start -a android.intent.action.MAIN -e toasttext "You were on Battery Profile" -n mkadp.toast/.MainActivity
+			sleep 2
+			am start -a android.intent.action.MAIN -e toasttext "Reboot needed" -n mkadp.toast/.MainActivity
+			sleep 1
+			am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 5 secs..." -n mkadp.toast/.MainActivity
+			sleep 1
+			am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 4 secs..." -n mkadp.toast/.MainActivity
+			sleep 1
+			am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 3 secs..." -n mkadp.toast/.MainActivity
+			sleep 1
+			am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 2 secs..." -n mkadp.toast/.MainActivity
+			sleep 1
+			am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 1 sec..." -n mkadp.toast/.MainActivity
+			sleep 1
+			am start -a android.intent.action.MAIN -e toasttext "Device is rebooting..." -n mkadp.toast/.MainActivity
+			sleep 1
+			reboot
+		else
+			if [ -f "$FILEBAL" ]; then
+				rm -rf $FILEEA
+				echo -n >$FILEBAL
+				am start -a android.intent.action.MAIN -e toasttext "You were on Balanced Profile" -n mkadp.toast/.MainActivity
+				sleep 2
+				am start -a android.intent.action.MAIN -e toasttext "Reboot needed" -n mkadp.toast/.MainActivity
+				sleep 1
+				am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 5 secs..." -n mkadp.toast/.MainActivity
+				sleep 1
+				am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 4 secs..." -n mkadp.toast/.MainActivity
+				sleep 1
+				am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 3 secs..." -n mkadp.toast/.MainActivity
+				sleep 1
+				am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 2 secs..." -n mkadp.toast/.MainActivity
+				sleep 1
+				am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 1 sec..." -n mkadp.toast/.MainActivity
+				sleep 1
+				am start -a android.intent.action.MAIN -e toasttext "Device is rebooting..." -n mkadp.toast/.MainActivity
+				sleep 1
+				reboot
+			fi
+		fi
+	fi
+fi
