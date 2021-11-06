@@ -29,9 +29,9 @@ LOGFU=/data/media/0/butterlimits.log
 #=======================================#
 LOGBL1=/data/media/0/.mkadp.log
 LOGBL2=/data/media/0/butterlimits.log
-LOG2=/data/data/com.mkadp.blapptwotbonefone/files/butterlimits.log
-LOG2A=/data/data/com.mkadp.blapptwotbonefone/files/zbutterlimits.log
-LOG2B=/data/data/com.mkadp.blapptwotbonefone/files/zzbutterlimits.log
+LOG2=/data/data/com.mkadp.blappeft/files/butterlimits.log
+LOG2A=/data/data/com.mkadp.blappeft/files/zbutterlimits.log
+LOG2B=/data/data/com.mkadp.blappeft/files/zzbutterlimits.log
 IDPATH=/data/adb/modules/butterlimitsforop7poos11uni
 MKADPP=$IDPATH/system/etc/mkadp/P
 pme='pm enable'
@@ -92,18 +92,12 @@ ctl() {
 
 # Print device information prior to execution
 kmsg2 $(date) 
-kmsg2 "ButterLimits Mode"
-kmsg2 "SeverBased v8.3.4 Test"
-kmsg2 "LastUpdated 13-Sep-2021 13:32 [HH:MM] IST"
+kmsg2 "Balanced Profile"
+kmsg2 "SeverBased v9.6.1"
+kmsg2 "LastUpdated 06-Nov-2021 15:00 [HH:MM] IST"
 kmsg2 "----"
-kmsg2 "Prop Tweaks already applied"
-kmsg2 "while boot"
-kmsg2 "----"
-kmsg2 "Database Optimization already done"
-kmsg2 "while boot"
-kmsg2 "----"
-kmsg2 "Already Optimized system"
-kmsg2 "while boot"
+kmsg2 "Some tweaks are being automatically applied"
+kmsg2 "on each boot"
 kmsg2 "----"
 kmsg2 $(date) 
 kmsg2 "Starting other tweaks works"
@@ -286,7 +280,7 @@ ctl /sys/devices/system/cpu/cpu4/core_ctl/max_cpus 2
 ctl /sys/devices/system/cpu/cpu4/core_ctl/min_cpus 1
 
 # Other CPU tweaks
-ctl /dev/cpuctl/cpu.shares 1024
+#ctl /dev/cpuctl/cpu.shares 1024
 
 # Force switch off some headache created by kernel logging in case kernel have it enabled;
 ctl /proc/sys/debug/exception-trace 0
@@ -326,6 +320,41 @@ ctl /proc/sys/net/ipv4/tcp_keepalive_time 21600
 ctl /proc/sys/net/ipv4/tcp_no_metrics_save 1
 ctl /proc/sys/net/ipv4/tcp_slow_start_after_idle 0
 ctl /proc/sys/net/ipv6/ip6frag_time 48
+#
+ctl /proc/sys/net/ipv4/tcp_keepalive_probes 5
+ctl /proc/sys/net/ipv4/tcp_fin_timeout 30
+ctl /proc/sys/net/ipv4/tcp_moderate_rcvbuf 1
+ctl /proc/sys/net/ipv4/udp_rmem_min 6144
+ctl /proc/sys/net/ipv4/udp_wmem_min 6144
+ctl /proc/sys/net/ipv4/tcp_rfc1337 1
+ctl /proc/sys/net/ipv4/ip_no_pmtu_disc 0
+ctl /proc/sys/net/ipv4/tcp_ecn 0
+ctl /proc/sys/net/ipv4/tcp_wmem "6144 87380 2097152"
+ctl /proc/sys/net/ipv4/tcp_rmem "6144 87380 2097152"
+ctl /proc/sys/net/ipv4/tcp_synack_retries 2
+ctl /proc/sys/net/ipv4/tcp_syn_retries 2
+ctl /proc/sys/net/ipv4/ip_forward 0
+ctl /proc/sys/net/ipv4/tcp_window_scaling 1
+ctl /proc/sys/net/ipv4/conf/default/accept_source_route 0
+ctl /proc/sys/net/ipv4/conf/all/accept_source_route 0
+ctl /proc/sys/net/ipv4/conf/all/accept_redirects 0
+ctl /proc/sys/net/ipv4/conf/default/accept_redirects 0
+ctl /proc/sys/net/ipv4/conf/all/secure_redirects 0
+ctl /proc/sys/net/ipv4/conf/default/secure_redirects 0
+ctl /proc/sys/net/ipv4/tcp_tw_recycle 1
+ctl /proc/sys/net/ipv4/ip_dynaddr 0
+ctl /proc/sys/net/ipv4/tcp_timestamps 0
+ctl /proc/sys/net/ipv4/tcp_max_tw_buckets 1440000
+ctl /proc/sys/net/ipv4/tcp_mem "57344 57344 524288"
+ctl /proc/sys/net/ipv4/tcp_max_tw_buckets 1440000
+ctl /proc/sys/net/core/rmem_max 2097152
+ctl /proc/sys/net/core/wmem_max 2097152
+ctl /proc/sys/net/core/rmem_default 262144
+ctl /proc/sys/net/core/wmem_default 262144
+ctl /proc/sys/net/core/optmem_max 20480
+ctl /proc/sys/net/core/netdev_max_backlog 2500
+ctl /proc/sys/net/unix/max_dgram_qlen 50
+
 
 # VMemory tweaks big improved balance between performance and battery life;
 ctl /proc/sys/vm/drop_caches 1
@@ -435,8 +464,17 @@ ctl "${g}"/rq_affinity 1
 ctl "${g}"/iosched/slice_idle 0
 ctl "${g}"/iosched/low_latency 0
 ctl "${g}"/scheduler cfq
-ctl "${g}"/read_ahead_kb 128
+ctl "${g}"/read_ahead_kb 256
+ctl "${g}"/nr_requests 8192
 done
+
+#am start -a android.intent.action.MAIN -e toasttext "Applying Mount-Related Tweaks..." -n mkadp.toast/.MainActivity
+# Remount all partitions with noatime
+#for mkk in $($BB mount | grep relatime | cut -d " " -f3);
+#do
+#$BB mount -o remount,noatime $mkk;
+#done
+
 
 am start -a android.intent.action.MAIN -e toasttext "Still Applying-01...Please Wait" -n mkadp.toast/.MainActivity
 
@@ -582,103 +620,6 @@ kmsg2 $(date)
 kmsg2 "Applied..."
 kmsg2 "----"
 
-kmsg2 "Some other optimization works started..."
-kmsg2 "----"
-
-am start -a android.intent.action.MAIN -e toasttext "Some Launchers/Apps Optimisations" -n mkadp.toast/.MainActivity
-
-#AddonOn62x1
-list="com.android.systemui com.google.android.launcher org.lineageos.trebuchet com.google.android.apps.plus com.deletescape.launchair com.android.launcher3 com.actionlauncher.playstore com.yandex.launcher com.google.android.apps.nexuslauncher com.miui9launcher.miuithemes com.huawei.android.launcher com.miui.home com.cma.launcher.lite com.jiubang.go.mini.launcher com.kkmlauncher-1 com.uprui.launcher.marshmallow com.android.launcher org.adw.launcher org.adwfreak.launcher net.alamoapps.launcher com.anddoes.launcher com.android.lmt com.chrislacy.actionlauncher.pro com.cyanogenmod.trebuchet com.gau.go.launcherex com.gtp.nextlauncher com.miui.mihome2 com.mobint.hololauncher com.mobint.hololauncher.hd com.qihoo360.launcher com.teslacoilsw.launcher com.tsf.shell org.zeam com.sonyericsson.home com.xperiaZ5.home com.sonymobile.simplehome com.teslacoilsw.launcher.prime com.miui.home com.anddoes.launcher.pro-1 com.anddoes.launcher-2 com.actionlauncher.playstore com.lge.launcher2 com.sec.android.app.launcher com.sec.android.app.twlauncher com.gtp.nextlauncher com.cyanogenport.trebuchet net.oneplus.launcher com.whatsapp org.thunderdog.challegram"
-
-renice -n 0 $(pgrep zygote) 2>/dev/null
-renice -n -20 $(pgrep kswapd0) 2>/dev/null
-renice -n 19 $(pgrep android.process.media) 2>/dev/null
-
-for class in $list; do
-	if [ `pidof $class` ]; then
-	  launcher=`pidof $class`;
-	  ctl /proc/$launcher/oom_adj -17
-	  renice -n -18 $launcher 2>/dev/null
-	fi
-done
-
-kmsg2 $(date)
-kmsg2 "Done"
-kmsg2 "Some heavy works done..."
-kmsg2 "----"
-#Zip4-0
-
-kmsg2 "Actually Many heavy works done..."
-kmsg2 "Let me breathe..."
-kmsg2 "----"
-
-kmsg $(date) 
-kmsg "Some shits will be removed"
-kmsg "----"
-
-kmsg2 $(date)
-kmsg2 "Some shits will be removed"
-kmsg2 "Logs/Cache/Temp. Files etc."
-kmsg2 "----"
-
-am start -a android.intent.action.MAIN -e toasttext "Removing some Shits" -n mkadp.toast/.MainActivity
-
-# This shit shouled be cleaned
-rm -Rf /cache/*.apk;
-rm -f /data/*.log;
-rm -f /data/*.txt;
-rm -f /data/anr/*;
-rm -f /data/backup/pending/*.tmp;
-rm -f /data/cache/*.*;
-rm -f /data/data/*.log;
-rm -f /data/data/*.txt;
-rm -f /data/log/*.log;
-rm -f /data/log/*.txt;
-rm -f /data/local/*.apk;
-rm -f /data/local/*.log;
-rm -f /data/local/*.txt;
-rm -f /data/local/tmp/*;
-rm -f /data/last_alog/*.log;
-rm -f /data/last_alog/*.txt;
-rm -f /data/last_kmsg/*.log;
-rm -f /data/last_kmsg/*.txt;
-rm -f /data/mlog/*;
-rm -f /data/system/*.log;
-rm -f /data/system/*.txt;
-rm -f /data/system/dropbox/*;
-rm -Rf /data/system/usagestats/*;
-rm -f /data/system/shared_prefs/*;
-rm -f /data/tombstones/*;
-rm -Rf /data/media/0/LOST.DIR;
-
-kmsg $(date) 
-kmsg "Some shits are removed"
-kmsg "----"
-kmsg2 $(date) 
-kmsg2 "Done"
-kmsg2 "----"
-
-kmsg $(date) 
-kmsg "fsrtim"
-kmsg "----"
-
-kmsg2 "Let's do some fstrim tweak..."
-kmsg2 "----"
-
-am start -a android.intent.action.MAIN -e toasttext "Applying some Xtra Tweaks..." -n mkadp.toast/.MainActivity
-
-fst=/data/adb/modules/butterlimitsforop7poos11uni/system/xbin/fstrim
-
-$fst -v /data;
-$fst -v /system;
-$fst -v /cache;
-$fst -v /vendor;
-$fst -v /product;
-
-kmsg $(date) 
-kmsg "fstrim done"
-kmsg "----"
-
 #
 kmsg $(date) 
 kmsg "Disabling ZRAM"
@@ -706,16 +647,6 @@ kmsg2 $(date)
 kmsg2 "ZRAM Disable"
 kmsg2 "----"
 #
-kmsg2 $(date) 
-kmsg2 "CPUSets"
-kmsg2 "----"
-
-ctl /dev/cpuset/audio-app/cpus 0-1
-ctl /dev/cpuset/top-app/cpu 0-6
-ctl /dev/cpuset/camera-daemon/cpus 0-3
-ctl /dev/cpuset/dislay/cpus 4-6
-ctl /dev/cpuset/system-background/cpus 0-2
-ctl /dev/cpuset/restricted/cpus 4-7
 
 kmsg2 $(date) 
 kmsg2 "All Done."
@@ -727,17 +658,17 @@ kmsg $(date)
 kmsg "MKADP HAS EXECUTED TASK SUCCESSFULLY. ENJOY!" 
 
 kmsg3 $(date) 
-kmsg3 "ButterLimits Enabled"
+kmsg3 "Balanced-Profile Enabled"
 kmsg3 "----"
 
-$BB cp -rf /data/media/0/YourBLchanges.log /data/data/com.mkadp.blapptwotbonefone/files/YourBLchanges.log
+$BB cp -rf /data/media/0/YourBLchanges.log /data/data/com.mkadp.blappeft/files/YourBLchanges.log
 
 am start -a android.intent.action.MAIN -e toasttext "Wiping Cache" -n mkadp.toast/.MainActivity
 
 $BB rm -rf /cache/*	
 
 am start -a android.intent.action.MAIN -e toasttext "All Done. Thankyou for your patience" -n mkadp.toast/.MainActivity
-am start -n com.mkadp.blapptwotbonefone/.activities.LogsActivity
+am start -n com.mkadp.blappeft/.activities.LogsActivity
 
 dumpsys deviceidle enable all;
 dumpsys deviceidle enabled all;
@@ -805,4 +736,3 @@ else
 		fi
 	fi
 fi
-		
