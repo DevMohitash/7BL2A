@@ -662,7 +662,6 @@ am start -a android.intent.action.MAIN -e toasttext "Wiping Cache" -n mkadp.toas
 $BB rm -rf /cache/*	
 
 am start -a android.intent.action.MAIN -e toasttext "All Done. Thankyou for your patience" -n mkadp.toast/.MainActivity
-am start -n com.mkadp.blappeft/.activities.LogsActivity
 
 dumpsys deviceidle enable all;
 dumpsys deviceidle enabled all;
@@ -678,11 +677,13 @@ FILEEXT=$MKADPP/ext
 FILEEA=$MKADPP/ea
 
 if [ -f "$FILEBAT" ]; then
+	am start -n com.mkadp.blappeft/.activities.LogsActivity
 	exit 0
 else
 	if [ -f "$FILEBAL" ]; then
 		rm -rf $FILEBAL
 		echo -n >$FILEBAT
+		am start -n com.mkadp.blappeft/.activities.LogsActivity
 	else
 		if [ -f "$FILEEXT" ]; then
 			rm -rf $FILEEXT
