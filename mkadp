@@ -7,7 +7,7 @@ BRANCH="Extremely-Aggressive-Profile"
 #=======================================#
 #=======================================#
 
-am start -a android.intent.action.MAIN -e toasttext "Enabling ButterFly-ExtremeAggressive. This can take few minutes" -n mkadp.toast/.MainActivity
+am start -a android.intent.action.MAIN -e toasttext "Enabling ExtremeAggressive. This can take few minutes" -n mkadp.toast/.MainActivity
 
 $BB cp -rf /data/adb/modules/butterlimitsforop7poos11uni/system/etc/mkadp/ea/module.prop /data/adb/modules/butterlimitsforop7poos11uni
 
@@ -15,7 +15,6 @@ kmsg3() {
 	echo -e "[*] $@" >> $CLOG
 }
 
-am start -a android.intent.action.MAIN -e toasttext "Setting Variables" -n mkadp.toast/.MainActivity
 
 #=======================================#
 #VARIABLES==============================#
