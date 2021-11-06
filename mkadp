@@ -83,21 +83,11 @@ ctl() {
 
 # Print device information prior to execution
 kmsg2 $(date) 
-kmsg2 "BL Battery Mode"
-kmsg2 "ServerBased v9.6.0"
-kmsg2 "LastUpdated 16-Oct-2021 15:08 [HH:MM] IST"
+kmsg2 "Battery Profile"
+kmsg2 "ServerBased v9.6.1"
+kmsg2 "LastUpdated 06-Nov-2021 14:08 [HH:MM] IST"
 kmsg2 "----"
-kmsg2 "Prop Tweaks already applied"
-kmsg2 "while boot"
-kmsg2 "----"
-kmsg2 "Database Optimization already done"
-kmsg2 "while boot"
-kmsg2 "----"
-kmsg2 "Already Zipaligned APKs"
-kmsg2 "while boot"
-kmsg2 "----"
-kmsg2 "Already Optimized system"
-kmsg2 "while boot"
+kmsg2 "Some tweaks are being applied on each boot automatically"
 kmsg2 "----"
 kmsg2 $(date) 
 kmsg2 "Starting other tweaks works"
