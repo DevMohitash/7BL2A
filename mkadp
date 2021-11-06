@@ -7,11 +7,9 @@ BRANCH="Battery-Profile"
 #=======================================#
 #=======================================#
 
-am start -a android.intent.action.MAIN -e toasttext "Enabling ButterLimits-Battery. This can few minutes" -n mkadp.toast/.MainActivity
+am start -a android.intent.action.MAIN -e toasttext "Enabling Battery Profile. This can few minutes" -n mkadp.toast/.MainActivity
 
 $BB cp -rf /data/adb/modules/butterlimitsforop7poos11uni/system/etc/mkadp/battery/module.prop /data/adb/modules/butterlimitsforop7poos11uni
-
-am start -a android.intent.action.MAIN -e toasttext "Setting Variables" -n mkadp.toast/.MainActivity
 
 #=======================================#
 #VARIABLES==============================#
