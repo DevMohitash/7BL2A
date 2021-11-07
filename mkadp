@@ -697,6 +697,9 @@ else
 				am start -a android.intent.action.MAIN -e toasttext "Device is rebooting..." -n mkadp.toast/.MainActivity
 				sleep 1
 				reboot
+			else
+				echo -n >$FILEEA
+				am start -n com.mkadp.blapptb/.activities.LogsActivity
 			fi
 		fi
 	fi
