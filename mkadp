@@ -688,49 +688,48 @@ else
 	if [ -f "$FILEBAL" ]; then
 		am start -n com.mkadp.blapptb/.activities.LogsActivity
 		exit 0
-	else
-		if [ -f "$FILEEXT" ]; then
-			rm -rf $FILEEXT
-			echo -n >$FILEBAL
-			am start -a android.intent.action.MAIN -e toasttext "You were on Extreme Profile" -n mkadp.toast/.MainActivity
-			sleep 2
-			am start -a android.intent.action.MAIN -e toasttext "Reboot needed" -n mkadp.toast/.MainActivity
-			sleep 1
-			am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 5 secs..." -n mkadp.toast/.MainActivity
-			sleep 1
-			am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 4 secs..." -n mkadp.toast/.MainActivity
-			sleep 1
-			am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 3 secs..." -n mkadp.toast/.MainActivity
-			sleep 1
-			am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 2 secs..." -n mkadp.toast/.MainActivity
-			sleep 1
-			am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 1 sec..." -n mkadp.toast/.MainActivity
-			sleep 1
-			am start -a android.intent.action.MAIN -e toasttext "Device is rebooting..." -n mkadp.toast/.MainActivity
-			sleep 1
-			reboot
-		else
-			if [ -f "$FILEEA" ]; then
-				rm -rf $FILEEA
-				echo -n >$FILEBAL
-				am start -a android.intent.action.MAIN -e toasttext "You were on Aggressive Profile" -n mkadp.toast/.MainActivity
-				sleep 2
-				am start -a android.intent.action.MAIN -e toasttext "Reboot needed" -n mkadp.toast/.MainActivity
-				sleep 1
-				am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 5 secs..." -n mkadp.toast/.MainActivity
-				sleep 1
-				am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 4 secs..." -n mkadp.toast/.MainActivity
-				sleep 1
-				am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 3 secs..." -n mkadp.toast/.MainActivity
-				sleep 1
-				am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 2 secs..." -n mkadp.toast/.MainActivity
-				sleep 1
-				am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 1 sec..." -n mkadp.toast/.MainActivity
-				sleep 1
-				am start -a android.intent.action.MAIN -e toasttext "Device is rebooting..." -n mkadp.toast/.MainActivity
-				sleep 1
-				reboot
-			fi
-		fi
+	if
+fi
+if [ -f "$FILEEXT" ]; then
+	rm -rf $FILEEXT
+	echo -n >$FILEBAL
+	am start -a android.intent.action.MAIN -e toasttext "You were on Extreme Profile" -n mkadp.toast/.MainActivity
+	sleep 2
+	am start -a android.intent.action.MAIN -e toasttext "Reboot needed" -n mkadp.toast/.MainActivity
+	sleep 1
+	am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 5 secs..." -n mkadp.toast/.MainActivity
+	sleep 1
+	am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 4 secs..." -n mkadp.toast/.MainActivity
+	sleep 1
+	am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 3 secs..." -n mkadp.toast/.MainActivity
+	sleep 1
+	am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 2 secs..." -n mkadp.toast/.MainActivity
+	sleep 1
+	am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 1 sec..." -n mkadp.toast/.MainActivity
+	sleep 1
+	am start -a android.intent.action.MAIN -e toasttext "Device is rebooting..." -n mkadp.toast/.MainActivity
+	sleep 1
+	reboot
+else
+	if [ -f "$FILEEA" ]; then
+		rm -rf $FILEEA
+		echo -n >$FILEBAL
+		am start -a android.intent.action.MAIN -e toasttext "You were on Aggressive Profile" -n mkadp.toast/.MainActivity
+		sleep 2
+		am start -a android.intent.action.MAIN -e toasttext "Reboot needed" -n mkadp.toast/.MainActivity
+		sleep 1
+		am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 5 secs..." -n mkadp.toast/.MainActivity
+		sleep 1
+		am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 4 secs..." -n mkadp.toast/.MainActivity
+		sleep 1
+		am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 3 secs..." -n mkadp.toast/.MainActivity
+		sleep 1
+		am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 2 secs..." -n mkadp.toast/.MainActivity
+		sleep 1
+		am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 1 sec..." -n mkadp.toast/.MainActivity
+		sleep 1
+		am start -a android.intent.action.MAIN -e toasttext "Device is rebooting..." -n mkadp.toast/.MainActivity
+		sleep 1
+		reboot
 	fi
 fi
