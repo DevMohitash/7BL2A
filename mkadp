@@ -24,9 +24,9 @@ LOGFU=/data/media/0/butterlimits.log
 #=======================================#
 LOGBL1=/data/media/0/.mkadp.log
 LOGBL2=/data/media/0/butterlimits.log
-LOG2=/data/data/com.mkadp.blappeftext/files/butterlimits.log
-LOG2A=/data/data/com.mkadp.blappeftext/files/zbutterlimits.log
-LOG2B=/data/data/com.mkadp.blappeftext/files/zzbutterlimits.log
+LOG2=/data/data/com.mkadp.blappetb/files/butterlimits.log
+LOG2A=/data/data/com.mkadp.blapptb/files/zbutterlimits.log
+LOG2B=/data/data/com.mkadp.blapptb/files/zzbutterlimits.log
 IDPATH=/data/adb/modules/butterlimitsforop7poos11uni
 MKADPP=$IDPATH/system/etc/mkadp/P
 pme='pm enable'
@@ -617,7 +617,7 @@ kmsg3 $(date)
 kmsg3 "Extreme Mode Enabled"
 kmsg3 "----"
 
-$$BB cp -rf /data/media/0/YourBLchanges.log /data/data/com.mkadp.blappeftext/files/YourBLchanges.log
+$$BB cp -rf /data/media/0/YourBLchanges.log /data/data/com.mkadp.blapptb/files/YourBLchanges.log
 
 am start -a android.intent.action.MAIN -e toasttext "Wiping Cache" -n mkadp.toast/.MainActivity
 
@@ -633,11 +633,11 @@ FILEEA=$MKADPP/ea
 if [ -f "$FILEEA" ]; then
 	rm -rf $FILEEA
 	echo -n >$FILEEXT
-	am start -n com.mkadp.blappeft/.activities.LogsActivity
+	am start -n com.mkadp.blapptb/.activities.LogsActivity
 	exit 0
 else
 	if [ -f "$FILEEXT" ]; then
-		am start -n com.mkadp.blappeft/.activities.LogsActivity
+		am start -n com.mkadp.blapptb/.activities.LogsActivity
 		exit 0
 	else
 		if [ -f "$FILEBAT" ]; then
