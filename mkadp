@@ -686,7 +686,7 @@ if [ -f "$FILEBAT" ]; then
 	exit 0
 else
 	if [ -f "$FILEBAL" ]; then
-		am start -n com.mkadp.blapptb/.activities.LogsActivity
+		am start -n com.mkadp.blapp/.activities.LogsActivity
 		exit 0
 	else
 		if [ -f "$FILEEXT" ]; then
