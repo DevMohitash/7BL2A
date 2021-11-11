@@ -26,9 +26,9 @@ LOGFU=/data/media/0/butterlimits.log
 #=======================================#
 LOGBL1=/data/media/0/.mkadp.log
 LOGBL2=/data/media/0/butterlimits.log
-LOG2=/data/data/com.mkadp.blapptb/files/butterlimits.log
-LOG2A=/data/data/com.mkadp.blapptb/files/zbutterlimits.log
-LOG2B=/data/data/com.mkadp.blapptb/files/zzbutterlimits.log
+LOG2=/data/data/com.mkadp.blapp/files/butterlimits.log
+LOG2A=/data/data/com.mkadp.blapp/files/zbutterlimits.log
+LOG2B=/data/data/com.mkadp.blapp/files/zzbutterlimits.log
 IDPATH=/data/adb/modules/butterlimitsforop7poos11uni
 MKADPP=$IDPATH/system/etc/mkadp/P
 pme='pm enable'
@@ -658,7 +658,7 @@ kmsg3 $(date)
 kmsg3 "Balanced-Profile Enabled"
 kmsg3 "----"
 
-$BB cp -rf /data/media/0/YourBLchanges.log /data/data/com.mkadp.blapptb/files/YourBLchanges.log
+$BB cp -rf /data/media/0/YourBLchanges.log /data/data/com.mkadp.blapp/files/YourBLchanges.log
 
 am start -a android.intent.action.MAIN -e toasttext "Wiping Cache" -n mkadp.toast/.MainActivity
 
@@ -682,7 +682,7 @@ FILEEA=$MKADPP/ea
 if [ -f "$FILEBAT" ]; then
 	rm -rf $FILEBAT
 	echo -n >$FILEBAL
-	am start -n com.mkadp.blapptb/.activities.LogsActivity
+	am start -n com.mkadp.blapp/.activities.LogsActivity
 	exit 0
 else
 	if [ -f "$FILEBAL" ]; then
@@ -732,7 +732,7 @@ else
 				reboot
 			else
 				echo -n >$FILEBAL
-				am start -n com.mkadp.blapptb/.activities.LogsActivity
+				am start -n com.mkadp.blapp/.activities.LogsActivity
 				exit 0
 			fi
 		fi
