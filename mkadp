@@ -657,8 +657,8 @@ else
 		exit 0
 	else
 		if [ -f "$FILEBAT" ]; then
-			rm -rf $FILEEXT
-			echo -n >$FILEBAL
+			rm -rf $FILEBAT
+			echo -n >$FILEEA
 			am start -a android.intent.action.MAIN -e toasttext "You were on Battery Profile" -n mkadp.toast/.MainActivity
 			sleep 2
 			am start -a android.intent.action.MAIN -e toasttext "Reboot needed" -n mkadp.toast/.MainActivity
@@ -678,8 +678,8 @@ else
 			reboot
 		else
 			if [ -f "$FILEBAL" ]; then
-				rm -rf $FILEEA
-				echo -n >$FILEBAL
+				rm -rf $FILEBAL
+				echo -n >$FILEEA
 				am start -a android.intent.action.MAIN -e toasttext "You were on Balanced Profile" -n mkadp.toast/.MainActivity
 				sleep 2
 				am start -a android.intent.action.MAIN -e toasttext "Reboot needed" -n mkadp.toast/.MainActivity
