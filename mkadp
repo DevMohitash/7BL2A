@@ -685,7 +685,7 @@ else
 	else
 		if [ -f "$FILEEXT" ]; then
 			rm -rf $FILEEXT
-			echo -n >$FILEBAL
+			echo -n >$FILEBAT
 			am start -a android.intent.action.MAIN -e toasttext "You were on Extreme Profile" -n mkadp.toast/.MainActivity
 			sleep 2
 			am start -a android.intent.action.MAIN -e toasttext "Reboot needed" -n mkadp.toast/.MainActivity
@@ -706,7 +706,7 @@ else
 		else
 			if [ -f "$FILEEA" ]; then
 				rm -rf $FILEEA
-				echo -n >$FILEBAL
+				echo -n >$FILEBAT
 				am start -a android.intent.action.MAIN -e toasttext "You were on Aggressive Profile" -n mkadp.toast/.MainActivity
 				sleep 2
 				am start -a android.intent.action.MAIN -e toasttext "Reboot needed" -n mkadp.toast/.MainActivity
