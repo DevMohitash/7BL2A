@@ -237,7 +237,6 @@ $pme 'com.google.android.gms/com.google.android.location.fused.FusedLocationServ
 $pme 'com.google.android.gms/com.google.android.location.fused.service.FusedProviderService' | tee -a $LOG2A
 $pme 'com.google.android.gms/com.google.android.location.geocode.GeocodeService' | tee -a $LOG2A
 am start -a android.intent.action.MAIN -e toasttext "Blocking 2..." -n mkadp.toast/.MainActivity
-$pme 'com.google.android.gms/com.google.android.location.internal.GoogleLocationManagerService' | tee -a $LOG2A
 $pme 'com.google.android.gms/com.google.android.location.places.PlaylogService' | tee -a $LOG2A
 $pme 'com.google.android.gms/com.google.android.location.places.service.GeoDataService' | tee -a $LOG2A
 $pme 'com.google.android.gms/com.google.android.location.places.service.PlaceDetectionService' | tee -a $LOG2A
