@@ -210,7 +210,6 @@ $pme 'com.google.android.gms/.ads.identifier.service.AdvertisingIdService' | tee
 $pme 'com.google.android.gms/.ads.jams.NegotiationService' | tee -a $LOG2A
 $pme 'com.google.android.gms/.ads.pan.PanService' | tee -a $LOG2A
 $pme 'com.google.android.gms/.ads.social.GcmSchedulerWakeupService' | tee -a $LOG2A
-am start -a android.intent.action.MAIN -e toasttext "Blocking 1..." -n mkadp.toast/.MainActivity
 $pme 'com.google.android.gms/.analytics.AnalyticsService' | tee -a $LOG2A
 $pme 'com.google.android.gms/.analytics.internal.PlayLogReportingService' | tee -a $LOG2A
 $pme 'com.google.android.gms/.analytics.service.AnalyticsService' | tee -a $LOG2A
@@ -236,7 +235,8 @@ $pme 'com.google.android.gms/com.google.android.location.activity.HardwareArProv
 $pme 'com.google.android.gms/com.google.android.location.fused.FusedLocationService' | tee -a $LOG2A
 $pme 'com.google.android.gms/com.google.android.location.fused.service.FusedProviderService' | tee -a $LOG2A
 $pme 'com.google.android.gms/com.google.android.location.geocode.GeocodeService' | tee -a $LOG2A
-am start -a android.intent.action.MAIN -e toasttext "Blocking 2..." -n mkadp.toast/.MainActivity
+#$pme 'com.google.android.gms/com.google.android.location.geofencer.service.GeofenceProviderService' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.internal.GoogleLocationManagerService' | tee -a $LOG2A
 $pme 'com.google.android.gms/com.google.android.location.places.PlaylogService' | tee -a $LOG2A
 $pme 'com.google.android.gms/com.google.android.location.places.service.GeoDataService' | tee -a $LOG2A
 $pme 'com.google.android.gms/com.google.android.location.places.service.PlaceDetectionService' | tee -a $LOG2A
@@ -247,8 +247,7 @@ $pme 'com.google.android.gms/.usagereporting.service.UsageReportingService' | te
 $pme 'com.google.android.gms/.update.SystemUpdateService' | tee -a $LOG2A
 $pme 'com.google.android.gms/com.google.android.location.network.ConfirmAlertActivity' | tee -a $LOG2A
 $pme 'com.google.android.gms/com.google.android.location.network.LocationProviderChangeReceiver' | tee -a $LOG2A
-#$pme 'com.google.android.gms/com.google.android.location.internal.server.GoogleLocationService' | tee -a $LOG2A
-am start -a android.intent.action.MAIN -e toasttext "Blocking 3..." -n mkadp.toast/.MainActivity
+$pme 'com.google.android.gms/com.google.android.location.internal.server.GoogleLocationService' | tee -a $LOG2A
 $pme 'com.google.android.gms/com.google.android.location.internal.PendingIntentCallbackService' | tee -a $LOG2A
 $pme 'com.google.android.gms/com.google.android.location.network.NetworkLocationService' | tee -a $LOG2A
 $pme 'com.google.android.gms/com.google.android.location.util.PreferenceService' | tee -a $LOG2A
