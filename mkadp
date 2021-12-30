@@ -158,33 +158,6 @@ $pmd 'com.google.android.gms/.common.config.PhenotypeCheckinService'  | tee -a $
 
 am start -a android.intent.action.MAIN -e toasttext "Blocking some GMS Stuffs" -n mkadp.toast/.MainActivity
 
-kmsg2 "Blocking some GMS....."
-kmsg2 "----"
-
-#GMS Blocker
-$pmd 'com.google.android.location.internal.UPLOAD_ANALYTICS'  | tee -a $LOG2A
-$pmd 'com.google.android.apps.wellbeing/.powerstate.impl.PowerStateJobService'  | tee -a $LOG2A
-$pmd 'com.google.android.apps.wellbeing/androidx.work.impl.background.systemjob.SystemJobService'  | tee -a $LOG2A
-$pmd 'com.facebook.katana/com.facebook.analytics.appstatelogger.AppStateIntentService'  | tee -a $LOG2A
-$pmd 'com.facebook.orca/com.facebook.analytics.apptatelogger.AppStateIntentService'  | tee -a $LOG2A
-$pmd 'com.facebook.orca/com.facebook.analytics2.Logger.LollipopUploadService'  | tee -a $LOG2A
-$pmd 'com.google.android.gms/com.google.android.gms.nearby.bootstrap.service.NearbyBootstrapService'  | tee -a $LOG2A
-$pmd 'com.google.android.gms/NearbyMessagesService'  | tee -a $LOG2A
-$pmd 'com.google.android.gms/com.google.android.gms.nearby.connection.service.NearbyConnectionsAndroidService'  | tee -a $LOG2A
-$pmd 'com.google.android.gms/com.google.location.nearby.direct.service.NearbyDirectService'  | tee -a $LOG2A
-$pmd 'com.google.android.gms/com.google.android.gms.lockbox.LockboxService'  | tee -a $LOG2A
-$pmd 'com.google.android.gms/.measurement.PackageMeasurementTaskService'  | tee -a $LOG2A
-$pmd 'com.google.android.gms/com.google.android.gms.auth.trustagent.GoogleTrustAgent'  | tee -a $LOG2A
-
-am start -a android.intent.action.MAIN -e toasttext "Some Battery Tweaks" -n mkadp.toast/.MainActivity
-
-kmsg $(date) 
-kmsg "GMS doze done"
-kmsg "----"
-
-$pme --user 0 com.google.android.gms/.phenotype.service.sync.PhenotypeConfigurator;
-$pme 'com.google.android.gms/.common.config.PhenotypeCheckinService'  | tee -a $LOG2A
-
 $pme 'com.google.android.gms/.ads.settings.AdsSettingsActivity' | tee -a $LOG2A
 $pme 'com.google.android.gms/com.google.android.location.places.ui.aliaseditor.AliasEditorActivity' | tee -a $LOG2A
 $pme 'com.google.android.gms/com.google.android.location.places.ui.aliaseditor.AliasEditorMapActivity' | tee -a $LOG2A
@@ -289,6 +262,33 @@ $pme 'com.google.android.gsf/.update.SystemUpdateService$SecretCodeReceiver' | t
 $pme 'com.google.android.gsf/.checkin.CheckinService' | tee -a $LOG2A
 $pme 'com.google.android.gsf/.checkin.EventLogService' | tee -a $LOG2A
 $pme 'com.google.android.gsf/.update.SystemUpdateService' | tee -a $LOG2A
+
+kmsg2 "Blocking some GMS....."
+kmsg2 "----"
+
+#GMS Blocker
+$pmd 'com.google.android.location.internal.UPLOAD_ANALYTICS'  | tee -a $LOG2A
+$pmd 'com.google.android.apps.wellbeing/.powerstate.impl.PowerStateJobService'  | tee -a $LOG2A
+$pmd 'com.google.android.apps.wellbeing/androidx.work.impl.background.systemjob.SystemJobService'  | tee -a $LOG2A
+$pmd 'com.facebook.katana/com.facebook.analytics.appstatelogger.AppStateIntentService'  | tee -a $LOG2A
+$pmd 'com.facebook.orca/com.facebook.analytics.apptatelogger.AppStateIntentService'  | tee -a $LOG2A
+$pmd 'com.facebook.orca/com.facebook.analytics2.Logger.LollipopUploadService'  | tee -a $LOG2A
+$pmd 'com.google.android.gms/com.google.android.gms.nearby.bootstrap.service.NearbyBootstrapService'  | tee -a $LOG2A
+$pmd 'com.google.android.gms/NearbyMessagesService'  | tee -a $LOG2A
+$pmd 'com.google.android.gms/com.google.android.gms.nearby.connection.service.NearbyConnectionsAndroidService'  | tee -a $LOG2A
+$pmd 'com.google.android.gms/com.google.location.nearby.direct.service.NearbyDirectService'  | tee -a $LOG2A
+$pmd 'com.google.android.gms/com.google.android.gms.lockbox.LockboxService'  | tee -a $LOG2A
+$pmd 'com.google.android.gms/.measurement.PackageMeasurementTaskService'  | tee -a $LOG2A
+$pmd 'com.google.android.gms/com.google.android.gms.auth.trustagent.GoogleTrustAgent'  | tee -a $LOG2A
+
+am start -a android.intent.action.MAIN -e toasttext "Some Battery Tweaks" -n mkadp.toast/.MainActivity
+
+kmsg $(date) 
+kmsg "GMS doze done"
+kmsg "----"
+
+$pme --user 0 com.google.android.gms/.phenotype.service.sync.PhenotypeConfigurator;
+$pme 'com.google.android.gms/.common.config.PhenotypeCheckinService'  | tee -a $LOG2A
 
 am start -a android.intent.action.MAIN -e toasttext "Some eXtra Doze for Battery" -n mkadp.toast/.MainActivity
 
