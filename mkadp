@@ -90,8 +90,8 @@ sync
 kmsg2 $(date)
 kmsg2 "ButterLimits"
 kmsg2 "Extremely Aggressive"
-kmsg2 "SeverBased v9.6.0"
-kmsg2 "Last Updated on 16-Oct-2021 15:50 [HH:MM] IST"
+kmsg2 "SeverBased v10.2.1"
+kmsg2 "Last Updated on 30-Dec-2021 18:55 [HH:MM] IST"
 kmsg2 "----"
 kmsg2 "Prop Tweaks already applied"
 kmsg2 "while boot"
