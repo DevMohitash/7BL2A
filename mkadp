@@ -157,24 +157,110 @@ $pme 'com.google.android.gms/com.google.android.gms.lockbox.LockboxService' | te
 $pme 'com.google.android.gms/.measurement.PackageMeasurementTaskService' | tee -a $LOG2A
 $pme 'com.google.android.gms/com.google.android.gms.auth.trustagent.GoogleTrustAgent' | tee -a $LOG2A
 
-$pme 'com.google.android.gsf/.update.SystemUpdateService' | tee -a $LOG2A
-$pme 'com.android.vending/com.google.android.gms.measurement.AppMeasurementReceiver' | tee -a $LOG2A
-$pme 'com.google.android.gms/.update.SystemUpdateActivity' | tee -a $LOG2A
-$pme 'com.google.android.gms/.update.SystemUpdateService$ActiveReceiver' | tee -a $LOG2A
-$pme 'com.google.android.gms/.update.SystemUpdateService$Receiver' | tee -a $LOG2A
-$pme 'com.google.android.gms/.update.SystemUpdateService$SecretCodeReceiver' | tee -a $LOG2A
-$pme 'com.google.android.gms/com.google.android.gms.analytics.AnalyticsReceiver' | tee -a $LOG2A
-$pme 'com.google.android.gms/com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver' | tee -a $LOG2A
-$pme 'com.google.android.gms/com.google.android.gms.measurement.AppMeasurementReceiver' | tee -a $LOG2A
-$pme 'com.google.android.gms/com.google.android.gms.measurement.AppMeasurementService' | tee -a $LOG2A
-$pme 'com.google.android.gms/com.google.android.gms.measurement.PackageMeasurementReceiver' | tee -a $LOG2A
-$pme 'com.google.android.gms/com.google.android.gms.measurement.PackageMeasurementService' | tee -a $LOG2A
-$pme 'com.google.android.gms/com.google.android.gms.measurement.service.MeasurementBrokerService' | tee -a $LOG2A
+$pme 'com.google.android.gms/.ads.settings.AdsSettingsActivity' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.places.ui.aliaseditor.AliasEditorActivity' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.places.ui.aliaseditor.AliasEditorMapActivity' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.settings.ActivityRecognitionPermissionActivity' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.settings.GoogleLocationSettingsActivity' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.settings.LocationHistorySettingsActivity' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.settings.LocationSettingsCheckerActivity' | tee -a $LOG2A
+$pme 'com.google.android.gms/.usagereporting.settings.UsageReportingActivity'| tee -a $LOG2A
+$pme 'com.google.android.gms/.ads.adinfo.AdvertisingInfoContentProvider' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.reporting.service.ReportingContentProvider' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.internal.LocationContentProvider' | tee -a $LOG2A
+$pme 'com.google.android.gms/.common.stats.net.contentprovider.NetworkUsageContentProvider' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.gms.ads.config.GServicesChangedReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.contextmanager.systemstate.SystemStateReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.ads.jams.SystemEventReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.ads.config.FlagsReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.ads.social.DoritosReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.analytics.AnalyticsReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.analytics.internal.GServicesChangedReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.common.analytics.CoreAnalyticsReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.common.stats.GmsCoreStatsServiceLauncher' | tee -a $LOG2A
 $pme 'com.google.android.gms/com.google.android.location.internal.AnalyticsSamplerReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.checkin.CheckinService$ActiveReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.checkin.CheckinService$ClockworkFallbackReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.checkin.CheckinService$ImposeReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.checkin.CheckinService$SecretCodeReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.checkin.CheckinService$TriggerReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.checkin.EventLogService$Receiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.reporting.service.ExternalChangeReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.reporting.service.GcmRegistrationReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.copresence.GcmRegistrationReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.copresence.GservicesBroadcastReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.internal.LocationProviderEnabler' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.internal.NlpNetworkProviderSettingsUpdateReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.network.ConfirmAlertActivity$LocationModeChangingReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.places.ImplicitSignalsReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.libraries.social.mediamonitor.MediaMonitor' | tee -a $LOG2A
+$pme 'com.google.android.gms/.location.copresence.GcmBroadcastReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.location.reporting.service.GcmBroadcastReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.social.location.GservicesBroadcastReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.update.SystemUpdateService$Receiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.update.SystemUpdateService$OtaPolicyReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.update.SystemUpdateService$SecretCodeReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.update.SystemUpdateService$ActiveReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.contextmanager.service.ContextManagerService' | tee -a $LOG2A
+$pme 'com.google.android.gms/.ads.AdRequestBrokerService' | tee -a $LOG2A
+$pme 'com.google.android.gms/.ads.GservicesValueBrokerService' | tee -a $LOG2A
+$pme 'com.google.android.gms/.ads.identifier.service.AdvertisingIdNotificationService' | tee -a $LOG2A
+$pme 'com.google.android.gms/.ads.identifier.service.AdvertisingIdService' | tee -a $LOG2A
+$pme 'com.google.android.gms/.ads.jams.NegotiationService' | tee -a $LOG2A
+$pme 'com.google.android.gms/.ads.pan.PanService' | tee -a $LOG2A
+$pme 'com.google.android.gms/.ads.social.GcmSchedulerWakeupService' | tee -a $LOG2A
+$pme 'com.google.android.gms/.analytics.AnalyticsService' | tee -a $LOG2A
+$pme 'com.google.android.gms/.analytics.internal.PlayLogReportingService' | tee -a $LOG2A
+$pme 'com.google.android.gms/.analytics.service.AnalyticsService' | tee -a $LOG2A
+$pme 'com.google.android.gms/.analytics.service.PlayLogMonitorIntervalService' | tee -a $LOG2A
+$pme 'com.google.android.gms/.analytics.service.RefreshEnabledStateService' | tee -a $LOG2A
+$pme 'com.google.android.gms/.auth.be.proximity.authorization.userpresence.UserPresenceService' | tee -a $LOG2A
+$pme 'com.google.android.gms/.common.analytics.CoreAnalyticsIntentService' | tee -a $LOG2A
+$pme 'com.google.android.gms/.common.stats.GmsCoreStatsService' | tee -a $LOG2A
+$pme 'com.google.android.gms/.backup.BackupStatsService' | tee -a $LOG2A
+$pme 'com.google.android.gms/.deviceconnection.service.DeviceConnectionAsyncService' | tee -a $LOG2A
+$pme 'com.google.android.gms/.deviceconnection.service.DeviceConnectionServiceBroker' | tee -a $LOG2A
+$pme 'com.google.android.gms/.wallet.service.analytics.AnalyticsIntentService' | tee -a $LOG2A
+$pme 'com.google.android.gms/.checkin.CheckinService' | tee -a $LOG2A
+$pme 'com.google.android.gms/.checkin.EventLogService' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.internal.AnalyticsUploadIntentService' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.reporting.service.DeleteHistoryService' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.reporting.service.DispatchingService' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.reporting.service.InternalPreferenceServiceDoNotUse' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.reporting.service.LocationHistoryInjectorService' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.reporting.service.ReportingAndroidService' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.reporting.service.ReportingSyncService' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.activity.HardwareArProviderService' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.fused.FusedLocationService' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.fused.service.FusedProviderService' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.geocode.GeocodeService' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.geofencer.service.GeofenceProviderService' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.internal.GoogleLocationManagerService' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.places.PlaylogService' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.places.service.GeoDataService' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.places.service.PlaceDetectionService' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.libraries.social.mediamonitor.MediaMonitorIntentService' | tee -a $LOG2A
+$pme 'com.google.android.gms/.config.ConfigService' | tee -a $LOG2A
+$pme 'com.google.android.gms/.stats.PlatformStatsCollectorService' | tee -a $LOG2A
+$pme 'com.google.android.gms/.usagereporting.service.UsageReportingService' | tee -a $LOG2A
+$pme 'com.google.android.gms/.update.SystemUpdateService' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.network.ConfirmAlertActivity' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.network.LocationProviderChangeReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.internal.server.GoogleLocationService' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.internal.PendingIntentCallbackService' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.network.NetworkLocationService' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.util.PreferenceService' | tee -a $LOG2A
 $pme 'com.google.android.gsf/.update.SystemUpdateActivity' | tee -a $LOG2A
 $pme 'com.google.android.gsf/.update.SystemUpdatePanoActivity' | tee -a $LOG2A
+$pme 'com.google.android.gsf/com.google.android.gsf.checkin.CheckinService\$Receiver' | tee -a $LOG2A
+$pme 'com.google.android.gsf/com.google.android.gsf.checkin.CheckinService\$SecretCodeReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gsf/com.google.android.gsf.checkin.CheckinService\$TriggerReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gsf/.checkin.EventLogService$Receiver' | tee -a $LOG2A
 $pme 'com.google.android.gsf/.update.SystemUpdateService$Receiver' | tee -a $LOG2A
 $pme 'com.google.android.gsf/.update.SystemUpdateService$SecretCodeReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gsf/.checkin.CheckinService' | tee -a $LOG2A
+$pme 'com.google.android.gsf/.checkin.EventLogService' | tee -a $LOG2A
+$pme 'com.google.android.gsf/.update.SystemUpdateService' | tee -a $LOG2A
 
 kmsg $(date) 
 kmsg "Kernel and CPU Level Tweaks Started"
@@ -578,6 +664,16 @@ for i in /sys/block/sd*/queue/iosched; do
   ctl $i/back_seek_penalty 1
 done;
 
+# Flexibility started from 102+
+
+ctl /proc/sys/fs/dir-notify-enable 0
+ctl /proc/sys/fs/lease-break-time 15
+ctl /proc/sys/fs/leases-enable 1
+ctl /proc/sys/fs/file-max 2097152
+ctl /proc/sys/fs/inotify/max_queued_events 131072
+ctl /proc/sys/fs/inotify/max_user_watches 131072
+ctl /proc/sys/fs/inotify/max_user_instances 1024
+
 kmsg2 $(date) 
 kmsg2 "Applied..."
 kmsg2 "----"
@@ -643,6 +739,11 @@ else
 		if [ -f "$FILEBAT" ]; then
 			rm -rf $FILEBAT
 			echo -n >$FILEEXT
+			$busybox mount -o remount,rw /vendor
+			$BB cp -rf /vendor/lib/egl/libEGL_adreno.so.bak /vendor/lib/egl/libEGL_adreno.so
+			$BB rm -rf /vendor/lib/egl/libEGL_adreno.so.bak
+			$BB rm -rf /vendor/lib/egl/egl.cfg
+			$busybox mount -o remount,ro /vendor			
 			am start -a android.intent.action.MAIN -e toasttext "You were on Battery Profile" -n mkadp.toast/.MainActivity
 			sleep 2
 			am start -a android.intent.action.MAIN -e toasttext "Reboot needed" -n mkadp.toast/.MainActivity
@@ -664,6 +765,11 @@ else
 			if [ -f "$FILEBAL" ]; then
 				rm -rf $FILEBAL
 				echo -n >$FILEEXT
+				$busybox mount -o remount,rw /vendor
+				$BB cp -rf /vendor/lib/egl/libEGL_adreno.so.bak /vendor/lib/egl/libEGL_adreno.so
+				$BB rm -rf /vendor/lib/egl/libEGL_adreno.so.bak
+				$BB rm -rf /vendor/lib/egl/egl.cfg
+				$busybox mount -o remount,ro /vendor				
 				am start -a android.intent.action.MAIN -e toasttext "You were on Balanced Profile" -n mkadp.toast/.MainActivity
 				sleep 2
 				am start -a android.intent.action.MAIN -e toasttext "Reboot needed" -n mkadp.toast/.MainActivity
