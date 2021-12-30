@@ -90,8 +90,8 @@ sync
 # Print device information prior to execution
 kmsg2 $(date) 
 kmsg2 "Extreme Profile"
-kmsg2 "SeverBased v9.6.1"
-kmsg2 "Last Updated on 06-Nov-2021 16:48 [HH:MM] IST"
+kmsg2 "SeverBased v10.2.1"
+kmsg2 "Last Updated on 30-Dec-2021 18:38 [HH:MM] IST"
 kmsg2 "----"
 kmsg2 "Some tweaks are being aplied on each boot automatically"
 kmsg2 "----"
