@@ -639,6 +639,8 @@ FILEBAT=$MKADPP/bat
 FILEBAL=$MKADPP/bal
 FILEEXT=$MKADPP/ext
 FILEEA=$MKADPP/ea
+MKADPOENF/data/mkadp/O/enf
+MKADPOPER/data/mkadp/O/per
 
 if [ -f "$FILEEA" ]; then
 	rm -rf $FILEEA
