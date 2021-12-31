@@ -165,46 +165,47 @@ $BB mount -o remount,rw /
 $BB mount -o remount,rw rootfs
 $BB mount -o remount,rw /system
 
-#$pme 'com.google.android.gms/.ads.settings.AdsSettingsActivity'
-#$pme 'com.google.android.gms/com.google.android.location.places.ui.aliaseditor.AliasEditorActivity' | tee -a $LOG2A
-#$pme 'com.google.android.gms/com.google.android.location.places.ui.aliaseditor.AliasEditorMapActivity' | tee -a $LOG2A
-#$pme 'com.google.android.gms/com.google.android.location.settings.ActivityRecognitionPermissionActivity' | tee -a $LOG2A
-#$pme 'com.google.android.gms/com.google.android.location.settings.GoogleLocationSettingsActivity' | tee -a $LOG2A
-#$pme 'com.google.android.gms/com.google.android.location.settings.LocationHistorySettingsActivity' | tee -a $LOG2A
-#$pme 'com.google.android.gms/com.google.android.location.settings.LocationSettingsCheckerActivity' | tee -a $LOG2A
-#$pme 'com.google.android.gms/.usagereporting.settings.UsageReportingActivity' | tee -a $LOG2A
-#$pme 'com.google.android.gms/.ads.adinfo.AdvertisingInfoContentProvider' | tee -a $LOG2A
-#$pme 'com.google.android.gms/com.google.android.location.reporting.service.ReportingContentProvider' | tee -a $LOG2A
-#$pme 'com.google.android.gms/com.google.android.location.internal.LocationContentProvider' | tee -a $LOG2A
-#$pme 'com.google.android.gms/.common.stats.net.contentprovider.NetworkUsageContentProvider' | tee -a $LOG2A
-#$pme 'com.google.android.gms/com.google.android.gms.ads.config.GServicesChangedReceiver' | tee -a $LOG2A
-#$pme 'com.google.android.gms/com.google.android.contextmanager.systemstate.SystemStateReceiver' | tee -a $LOG2A
-#$pme 'com.google.android.gms/.ads.jams.SystemEventReceiver' | tee -a $LOG2A
-#$pme 'com.google.android.gms/.ads.config.FlagsReceiver' | tee -a $LOG2A
-#$pme 'com.google.android.gms/.ads.social.DoritosReceiver' | tee -a $LOG2A
-#$pme 'com.google.android.gms/.analytics.AnalyticsReceiver' | tee -a $LOG2A
-#$pme 'com.google.android.gms/.analytics.internal.GServicesChangedReceiver' | tee -a $LOG2A
-#$pme 'com.google.android.gms/.common.analytics.CoreAnalyticsReceiver' | tee -a $LOG2A
-#$pme 'com.google.android.gms/.common.stats.GmsCoreStatsServiceLauncher' | tee -a $LOG2A
-#$pme 'com.google.android.gms/com.google.android.location.internal.AnalyticsSamplerReceiver'
-#$pme 'com.google.android.gms/.checkin.CheckinService$ActiveReceiver' | tee -a $LOG2A
-#$pme 'com.google.android.gms/.checkin.CheckinService$ClockworkFallbackReceiver' | tee -a $LOG2A
-#$pme 'com.google.android.gms/.checkin.CheckinService$ImposeReceiver' | tee -a $LOG2A
-#$pme 'com.google.android.gms/.checkin.CheckinService$SecretCodeReceiver' | tee -a $LOG2A
-#$pme 'com.google.android.gms/.checkin.CheckinService$TriggerReceiver' | tee -a $LOG2A
-#$pme 'com.google.android.gms/.checkin.EventLogService$Receiver' | tee -a $LOG2A
-#$pme 'com.google.android.gms/com.google.android.location.reporting.service.ExternalChangeReceiver'
-#$pme 'com.google.android.gms/com.google.android.location.reporting.service.GcmRegistrationReceiver' | tee -a $LOG2A
-#$pme 'com.google.android.gms/com.google.android.location.copresence.GcmRegistrationReceiver' | tee -a $LOG2A
-#$pme 'com.google.android.gms/com.google.android.location.copresence.GservicesBroadcastReceiver' | tee -a $LOG2A
-#$pme 'com.google.android.gms/com.google.android.location.internal.LocationProviderEnabler' | tee -a $LOG2A
-#$pme 'com.google.android.gms/com.google.android.location.internal.NlpNetworkProviderSettingsUpdateReceiver' | tee -a $LOG2A
-#$pme 'com.google.android.gms/com.google.android.location.network.ConfirmAlertActivity$LocationModeChangingReceiver' | tee -a $LOG2A
-#$pme 'com.google.android.gms/com.google.android.location.places.ImplicitSignalsReceiver' | tee -a $LOG2A
-#$pme 'com.google.android.gms/com.google.android.libraries.social.mediamonitor.MediaMonitor' | tee -a $LOG2A
-#$pme 'com.google.android.gms/.location.copresence.GcmBroadcastReceiver' | tee -a $LOG2A
-#$pme 'com.google.android.gms/.location.reporting.service.GcmBroadcastReceiver'
-#$pme 'com.google.android.gms/.social.location.GservicesBroadcastReceiver'
+
+$pme 'com.google.android.gms/.ads.settings.AdsSettingsActivity'
+$pme 'com.google.android.gms/com.google.android.location.places.ui.aliaseditor.AliasEditorActivity' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.places.ui.aliaseditor.AliasEditorMapActivity' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.settings.ActivityRecognitionPermissionActivity' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.settings.GoogleLocationSettingsActivity' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.settings.LocationHistorySettingsActivity' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.settings.LocationSettingsCheckerActivity' | tee -a $LOG2A
+$pme 'com.google.android.gms/.usagereporting.settings.UsageReportingActivity' | tee -a $LOG2A
+$pme 'com.google.android.gms/.ads.adinfo.AdvertisingInfoContentProvider' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.reporting.service.ReportingContentProvider' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.internal.LocationContentProvider' | tee -a $LOG2A
+$pme 'com.google.android.gms/.common.stats.net.contentprovider.NetworkUsageContentProvider' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.gms.ads.config.GServicesChangedReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.contextmanager.systemstate.SystemStateReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.ads.jams.SystemEventReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.ads.config.FlagsReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.ads.social.DoritosReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.analytics.AnalyticsReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.analytics.internal.GServicesChangedReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.common.analytics.CoreAnalyticsReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.common.stats.GmsCoreStatsServiceLauncher' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.internal.AnalyticsSamplerReceiver'
+$pme 'com.google.android.gms/.checkin.CheckinService$ActiveReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.checkin.CheckinService$ClockworkFallbackReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.checkin.CheckinService$ImposeReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.checkin.CheckinService$SecretCodeReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.checkin.CheckinService$TriggerReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.checkin.EventLogService$Receiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.reporting.service.ExternalChangeReceiver'
+$pme 'com.google.android.gms/com.google.android.location.reporting.service.GcmRegistrationReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.copresence.GcmRegistrationReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.copresence.GservicesBroadcastReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.internal.LocationProviderEnabler' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.internal.NlpNetworkProviderSettingsUpdateReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.network.ConfirmAlertActivity$LocationModeChangingReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.places.ImplicitSignalsReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.libraries.social.mediamonitor.MediaMonitor' | tee -a $LOG2A
+$pme 'com.google.android.gms/.location.copresence.GcmBroadcastReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.location.reporting.service.GcmBroadcastReceiver'
+$pme 'com.google.android.gms/.social.location.GservicesBroadcastReceiver'
 #$pme 'com.google.android.gms/.update.SystemUpdateService$Receiver' | tee -a $LOG2A
 #$pme 'com.google.android.gms/.update.SystemUpdateService$OtaPolicyReceiver' | tee -a $LOG2A
 #$pme 'com.google.android.gms/.update.SystemUpdateService$SecretCodeReceiver' | tee -a $LOG2A
