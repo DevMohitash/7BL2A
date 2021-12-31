@@ -652,12 +652,7 @@ else
 	else
 		if [ -f "$FILEBAT" ]; then
 			rm -rf $FILEBAT
-			echo -n >$FILEEXT
-			$busybox mount -o remount,rw /vendor
-			$BB cp -rf /vendor/lib/egl/libEGL_adreno.so.bak /vendor/lib/egl/libEGL_adreno.so
-			$BB rm -rf /vendor/lib/egl/libEGL_adreno.so.bak
-			$BB rm -rf /vendor/lib/egl/egl.cfg
-			$busybox mount -o remount,ro /vendor			
+			echo -n >$FILEEXT			
 			am start -a android.intent.action.MAIN -e toasttext "You were on Battery Profile" -n mkadp.toast/.MainActivity
 			sleep 2
 			am start -a android.intent.action.MAIN -e toasttext "Reboot needed" -n mkadp.toast/.MainActivity
@@ -678,12 +673,7 @@ else
 		else
 			if [ -f "$FILEBAL" ]; then
 				rm -rf $FILEBAL
-				echo -n >$FILEEXT
-				$busybox mount -o remount,rw /vendor
-				$BB cp -rf /vendor/lib/egl/libEGL_adreno.so.bak /vendor/lib/egl/libEGL_adreno.so
-				$BB rm -rf /vendor/lib/egl/libEGL_adreno.so.bak
-				$BB rm -rf /vendor/lib/egl/egl.cfg
-				$busybox mount -o remount,ro /vendor				
+				echo -n >$FILEEXT				
 				am start -a android.intent.action.MAIN -e toasttext "You were on Balanced Profile" -n mkadp.toast/.MainActivity
 				sleep 2
 				am start -a android.intent.action.MAIN -e toasttext "Reboot needed" -n mkadp.toast/.MainActivity
