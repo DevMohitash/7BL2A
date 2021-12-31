@@ -165,8 +165,26 @@ $BB mount -o remount,rw /
 $BB mount -o remount,rw rootfs
 $BB mount -o remount,rw /system
 
+$pme 'com.google.android.gsf/.update.SystemUpdateService'  | tee -a $LOG2A
+$pme 'com.android.vending/com.google.android.gms.measurement.AppMeasurementReceiver'  | tee -a $LOG2A
+$pme 'com.google.android.gms/.update.SystemUpdateActivity'  | tee -a $LOG2A
+$pme 'com.google.android.gms/.update.SystemUpdateService$ActiveReceiver'  | tee -a $LOG2A
+$pme 'com.google.android.gms/.update.SystemUpdateService$Receiver'  | tee -a $LOG2A
+$pme 'com.google.android.gms/.update.SystemUpdateService$SecretCodeReceiver'  | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.gms.analytics.AnalyticsReceiver'  | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver'  | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.gms.measurement.AppMeasurementReceiver'  | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.gms.measurement.AppMeasurementService'  | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.gms.measurement.PackageMeasurementReceiver'  | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.gms.measurement.PackageMeasurementService'  | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.gms.measurement.service.MeasurementBrokerService'  | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.internal.AnalyticsSamplerReceiver'  | tee -a $LOG2A
+$pme 'com.google.android.gsf/.update.SystemUpdateActivity'  | tee -a $LOG2A
+$pme 'com.google.android.gsf/.update.SystemUpdatePanoActivity'  | tee -a $LOG2A
+$pme 'com.google.android.gsf/.update.SystemUpdateService$Receiver'  | tee -a $LOG2A
+$pme 'com.google.android.gsf/.update.SystemUpdateService$SecretCodeReceiver'  | tee -a $LOG2A
 
-$pme 'com.google.android.gms/.ads.settings.AdsSettingsActivity'
+$pme 'com.google.android.gms/.ads.settings.AdsSettingsActivity' | tee -a $LOG2A
 $pme 'com.google.android.gms/com.google.android.location.places.ui.aliaseditor.AliasEditorActivity' | tee -a $LOG2A
 $pme 'com.google.android.gms/com.google.android.location.places.ui.aliaseditor.AliasEditorMapActivity' | tee -a $LOG2A
 $pme 'com.google.android.gms/com.google.android.location.settings.ActivityRecognitionPermissionActivity' | tee -a $LOG2A
@@ -187,14 +205,13 @@ $pme 'com.google.android.gms/.analytics.AnalyticsReceiver' | tee -a $LOG2A
 $pme 'com.google.android.gms/.analytics.internal.GServicesChangedReceiver' | tee -a $LOG2A
 $pme 'com.google.android.gms/.common.analytics.CoreAnalyticsReceiver' | tee -a $LOG2A
 $pme 'com.google.android.gms/.common.stats.GmsCoreStatsServiceLauncher' | tee -a $LOG2A
-$pme 'com.google.android.gms/com.google.android.location.internal.AnalyticsSamplerReceiver'
-#$pme 'com.google.android.gms/.checkin.CheckinService$ActiveReceiver' | tee -a $LOG2A
-#$pme 'com.google.android.gms/.checkin.CheckinService$ClockworkFallbackReceiver' | tee -a $LOG2A
-#$pme 'com.google.android.gms/.checkin.CheckinService$ImposeReceiver' | tee -a $LOG2A
-#$pme 'com.google.android.gms/.checkin.CheckinService$SecretCodeReceiver' | tee -a $LOG2A
-#$pme 'com.google.android.gms/.checkin.CheckinService$TriggerReceiver' | tee -a $LOG2A
-#$pme 'com.google.android.gms/.checkin.EventLogService$Receiver' | tee -a $LOG2A
-$pme 'com.google.android.gms/com.google.android.location.reporting.service.ExternalChangeReceiver'
+$pme 'com.google.android.gms/.checkin.CheckinService$ActiveReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.checkin.CheckinService$ClockworkFallbackReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.checkin.CheckinService$ImposeReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.checkin.CheckinService$SecretCodeReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.checkin.CheckinService$TriggerReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.checkin.EventLogService$Receiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.reporting.service.ExternalChangeReceiver' | tee -a $LOG2A
 $pme 'com.google.android.gms/com.google.android.location.reporting.service.GcmRegistrationReceiver' | tee -a $LOG2A
 $pme 'com.google.android.gms/com.google.android.location.copresence.GcmRegistrationReceiver' | tee -a $LOG2A
 $pme 'com.google.android.gms/com.google.android.location.copresence.GservicesBroadcastReceiver' | tee -a $LOG2A
@@ -204,13 +221,10 @@ $pme 'com.google.android.gms/com.google.android.location.network.ConfirmAlertAct
 $pme 'com.google.android.gms/com.google.android.location.places.ImplicitSignalsReceiver' | tee -a $LOG2A
 $pme 'com.google.android.gms/com.google.android.libraries.social.mediamonitor.MediaMonitor' | tee -a $LOG2A
 $pme 'com.google.android.gms/.location.copresence.GcmBroadcastReceiver' | tee -a $LOG2A
-$pme 'com.google.android.gms/.location.reporting.service.GcmBroadcastReceiver'
-$pme 'com.google.android.gms/.social.location.GservicesBroadcastReceiver'
-#$pme 'com.google.android.gms/.update.SystemUpdateService$Receiver' | tee -a $LOG2A
-#$pme 'com.google.android.gms/.update.SystemUpdateService$OtaPolicyReceiver' | tee -a $LOG2A
-#$pme 'com.google.android.gms/.update.SystemUpdateService$SecretCodeReceiver' | tee -a $LOG2A
-#$pme 'com.google.android.gms/.update.SystemUpdateService$ActiveReceiver' | tee -a $LOG2A
-#$pme 'com.google.android.gms/com.google.android.contextmanager.service.ContextManagerService' | tee -a $LOG2A
+$pme 'com.google.android.gms/.location.reporting.service.GcmBroadcastReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.social.location.GservicesBroadcastReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/.update.SystemUpdateService$OtaPolicyReceiver' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.contextmanager.service.ContextManagerService' | tee -a $LOG2A
 $pme 'com.google.android.gms/.ads.AdRequestBrokerService' | tee -a $LOG2A
 $pme 'com.google.android.gms/.ads.GservicesValueBrokerService' | tee -a $LOG2A
 $pme 'com.google.android.gms/.ads.identifier.service.AdvertisingIdNotificationService' | tee -a $LOG2A
@@ -259,17 +273,12 @@ $pme 'com.google.android.gms/com.google.android.location.internal.server.GoogleL
 $pme 'com.google.android.gms/com.google.android.location.internal.PendingIntentCallbackService' | tee -a $LOG2A
 $pme 'com.google.android.gms/com.google.android.location.network.NetworkLocationService' | tee -a $LOG2A
 $pme 'com.google.android.gms/com.google.android.location.util.PreferenceService' | tee -a $LOG2A
-$pme 'com.google.android.gsf/.update.SystemUpdateActivity' | tee -a $LOG2A
-$pme 'com.google.android.gsf/.update.SystemUpdatePanoActivity' | tee -a $LOG2A
 $pme 'com.google.android.gsf/com.google.android.gsf.checkin.CheckinService\$Receiver' | tee -a $LOG2A
 $pme 'com.google.android.gsf/com.google.android.gsf.checkin.CheckinService\$SecretCodeReceiver' | tee -a $LOG2A
 $pme 'com.google.android.gsf/com.google.android.gsf.checkin.CheckinService\$TriggerReceiver' | tee -a $LOG2A
 $pme 'com.google.android.gsf/.checkin.EventLogService$Receiver' | tee -a $LOG2A
-$pme 'com.google.android.gsf/.update.SystemUpdateService$Receiver' | tee -a $LOG2A
-$pme 'com.google.android.gsf/.update.SystemUpdateService$SecretCodeReceiver' | tee -a $LOG2A
 $pme 'com.google.android.gsf/.checkin.CheckinService' | tee -a $LOG2A
 $pme 'com.google.android.gsf/.checkin.EventLogService' | tee -a $LOG2A
-$pme 'com.google.android.gsf/.update.SystemUpdateService' | tee -a $LOG2A
 
 kmsg2 "Blocking some GMS....."
 kmsg2 "----"
