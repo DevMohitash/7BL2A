@@ -709,6 +709,8 @@ FILEBAT=$MKADPP/bat
 FILEBAL=$MKADPP/bal
 FILEEXT=$MKADPP/ext
 FILEEA=$MKADPP/ea
+MKADPOENF/data/mkadp/O/enf
+MKADPOPER/data/mkadp/O/per
 
 if [ -f "$FILEBAT" ]; then
 	am start -n com.mkadp.blapp/.activities.LogsActivity
