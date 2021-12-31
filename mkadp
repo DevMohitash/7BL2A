@@ -723,10 +723,10 @@ else
 			rm -rf $FILEEXT
 			echo -n >$FILEBAT
 			if [ -f "$MKADPOENF" ]; then
-				$BB cp -rf /data/adb/modules/butterlimitsforop7poos11uni/gpuenfs.sh /data/adb/modules/butterlimitsforop7poos11uni/service.sh
+				$BB cp -rf /data/adb/modules/butterlimitsforop7poos11uni/cpuenfs.sh /data/adb/modules/butterlimitsforop7poos11uni/service.sh
 			else
 				if [ -f "$MKADPOPER" ]; then
-					$BB cp -rf /data/adb/modules/butterlimitsforop7poos11uni/gpupers.sh /data/adb/modules/butterlimitsforop7poos11uni/service.sh
+					$BB cp -rf /data/adb/modules/butterlimitsforop7poos11uni/cpupers.sh /data/adb/modules/butterlimitsforop7poos11uni/service.sh
 				fi
 			fi			
 			am start -a android.intent.action.MAIN -e toasttext "You were on Extreme Profile" -n mkadp.toast/.MainActivity
@@ -751,10 +751,10 @@ else
 				rm -rf $FILEEA
 				echo -n >$FILEBAT
 				if [ -f "$MKADPOENF" ]; then
-					$BB cp -rf /data/adb/modules/butterlimitsforop7poos11uni/gpuenfs.sh /data/adb/modules/butterlimitsforop7poos11uni/service.sh
+					$BB cp -rf /data/adb/modules/butterlimitsforop7poos11uni/cpuenfs.sh /data/adb/modules/butterlimitsforop7poos11uni/service.sh
 				else
 					if [ -f "$MKADPOPER" ]; then
-						$BB cp -rf /data/adb/modules/butterlimitsforop7poos11uni/gpupers.sh /data/adb/modules/butterlimitsforop7poos11uni/service.sh
+						$BB cp -rf /data/adb/modules/butterlimitsforop7poos11uni/cpupers.sh /data/adb/modules/butterlimitsforop7poos11uni/service.sh
 					fi
 				fi				
 				am start -a android.intent.action.MAIN -e toasttext "You were on Aggressive Profile" -n mkadp.toast/.MainActivity
