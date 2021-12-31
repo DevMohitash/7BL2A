@@ -652,7 +652,14 @@ else
 	else
 		if [ -f "$FILEBAT" ]; then
 			rm -rf $FILEBAT
-			echo -n >$FILEEXT			
+			echo -n >$FILEEXT
+			if [ -f "$MKADPOENF" ]; then
+				$BB cp -rf /data/adb/modules/butterlimitsforop7poos11uni/gpuenfs.sh /data/adb/modules/butterlimitsforop7poos11uni/service.sh
+			else
+				if [ -f "$MKADPOPER" ]; then
+					$BB cp -rf /data/adb/modules/butterlimitsforop7poos11uni/gpupers.sh /data/adb/modules/butterlimitsforop7poos11uni/service.sh
+				fi
+			fi			
 			am start -a android.intent.action.MAIN -e toasttext "You were on Battery Profile" -n mkadp.toast/.MainActivity
 			sleep 2
 			am start -a android.intent.action.MAIN -e toasttext "Reboot needed" -n mkadp.toast/.MainActivity
@@ -673,7 +680,14 @@ else
 		else
 			if [ -f "$FILEBAL" ]; then
 				rm -rf $FILEBAL
-				echo -n >$FILEEXT				
+				echo -n >$FILEEXT
+				if [ -f "$MKADPOENF" ]; then
+					$BB cp -rf /data/adb/modules/butterlimitsforop7poos11uni/gpuenfs.sh /data/adb/modules/butterlimitsforop7poos11uni/service.sh
+				else
+					if [ -f "$MKADPOPER" ]; then
+						$BB cp -rf /data/adb/modules/butterlimitsforop7poos11uni/gpupers.sh /data/adb/modules/butterlimitsforop7poos11uni/service.sh
+					fi
+				fi				
 				am start -a android.intent.action.MAIN -e toasttext "You were on Balanced Profile" -n mkadp.toast/.MainActivity
 				sleep 2
 				am start -a android.intent.action.MAIN -e toasttext "Reboot needed" -n mkadp.toast/.MainActivity
