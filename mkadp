@@ -721,7 +721,8 @@ FILEBAT=$MKADPP/bat
 FILEBAL=$MKADPP/bal
 FILEEXT=$MKADPP/ext
 FILEEA=$MKADPP/ea
-FILEGPUBAK
+MKADPOENF/data/mkadp/O/enf
+MKADPOPER/data/mkadp/O/per
 
 mount -o remount,ro /
 mount -o remount,ro rootfs
@@ -743,6 +744,13 @@ else
 		if [ -f "$FILEEXT" ]; then
 			rm -rf $FILEEXT
 			echo -n >$FILEBAL
+			if [ -f "$MKADPOENF" ]; then
+				$BB cp -rf /data/adb/modules/butterlimitsforop7poos11uni/gpuenfs.sh /data/adb/modules/butterlimitsforop7poos11uni/service.sh
+			else
+				if [ -f "$MKADPOPER" ]; then
+					$BB cp -rf /data/adb/modules/butterlimitsforop7poos11uni/gpupers.sh /data/adb/modules/butterlimitsforop7poos11uni/service.sh
+				fi
+			fi
 			am start -a android.intent.action.MAIN -e toasttext "You were on Extreme Profile" -n mkadp.toast/.MainActivity
 			sleep 2
 			am start -a android.intent.action.MAIN -e toasttext "Reboot needed" -n mkadp.toast/.MainActivity
@@ -764,6 +772,13 @@ else
 			if [ -f "$FILEEA" ]; then
 				rm -rf $FILEEA
 				echo -n >$FILEBAL
+				if [ -f "$MKADPOENF" ]; then
+					$BB cp -rf /data/adb/modules/butterlimitsforop7poos11uni/gpuenfs.sh /data/adb/modules/butterlimitsforop7poos11uni/service.sh
+				else
+					if [ -f "$MKADPOPER" ]; then
+						$BB cp -rf /data/adb/modules/butterlimitsforop7poos11uni/gpupers.sh /data/adb/modules/butterlimitsforop7poos11uni/service.sh
+					fi
+				fi				
 				am start -a android.intent.action.MAIN -e toasttext "You were on Aggressive Profile" -n mkadp.toast/.MainActivity
 				sleep 2
 				am start -a android.intent.action.MAIN -e toasttext "Reboot needed" -n mkadp.toast/.MainActivity
