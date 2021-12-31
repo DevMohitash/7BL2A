@@ -209,7 +209,7 @@ $pme 'com.google.android.gms/.update.SystemUpdateService$Receiver' | tee -a $LOG
 $pme 'com.google.android.gms/.update.SystemUpdateService$OtaPolicyReceiver' | tee -a $LOG2A
 $pme 'com.google.android.gms/.update.SystemUpdateService$SecretCodeReceiver' | tee -a $LOG2A
 $pme 'com.google.android.gms/.update.SystemUpdateService$ActiveReceiver' | tee -a $LOG2A
-$pme 'com.google.android.gms/com.google.android.contextmanager.service.ContextManagerService' | tee -a $LOG2A
+#$pme 'com.google.android.gms/com.google.android.contextmanager.service.ContextManagerService' | tee -a $LOG2A
 $pme 'com.google.android.gms/.ads.AdRequestBrokerService' | tee -a $LOG2A
 $pme 'com.google.android.gms/.ads.GservicesValueBrokerService' | tee -a $LOG2A
 $pme 'com.google.android.gms/.ads.identifier.service.AdvertisingIdNotificationService' | tee -a $LOG2A
