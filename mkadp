@@ -721,12 +721,7 @@ else
 	else
 		if [ -f "$FILEEXT" ]; then
 			rm -rf $FILEEXT
-			echo -n >$FILEBAT
-			$busybox mount -o remount,rw /vendor
-			$BB cp -rf /vendor/lib/egl/libEGL_adreno.so /vendor/lib/egl/libEGL_adreno.so.bak
-			$BB rm -rf/vendor/lib/egl/libEGL_adreno.so
-			$BB cp -rf /data/adb/modules/butterlimitsforop7poos11uni/system/etc/mkadp/gpucpu/egl.cfg /vendor/lib/egl/egl.cfg
-			$busybox mount -o remount,ro /vendor			
+			echo -n >$FILEBAT			
 			am start -a android.intent.action.MAIN -e toasttext "You were on Extreme Profile" -n mkadp.toast/.MainActivity
 			sleep 2
 			am start -a android.intent.action.MAIN -e toasttext "Reboot needed" -n mkadp.toast/.MainActivity
@@ -747,12 +742,7 @@ else
 		else
 			if [ -f "$FILEEA" ]; then
 				rm -rf $FILEEA
-				echo -n >$FILEBAT
-				$busybox mount -o remount,rw /vendor
-				$BB cp -rf /vendor/lib/egl/libEGL_adreno.so /vendor/lib/egl/libEGL_adreno.so.bak
-				$BB rm -rf/vendor/lib/egl/libEGL_adreno.so
-				$BB cp -rf /data/adb/modules/butterlimitsforop7poos11uni/system/etc/mkadp/gpucpu/egl.cfg /vendor/lib/egl/egl.cfg
-				$busybox mount -o remount,ro /vendor				
+				echo -n >$FILEBAT				
 				am start -a android.intent.action.MAIN -e toasttext "You were on Aggressive Profile" -n mkadp.toast/.MainActivity
 				sleep 2
 				am start -a android.intent.action.MAIN -e toasttext "Reboot needed" -n mkadp.toast/.MainActivity
@@ -772,28 +762,8 @@ else
 				reboot
 			else
 				echo -n >$FILEBAT
-				$busybox mount -o remount,rw /vendor
-				$BB cp -rf /vendor/lib/egl/libEGL_adreno.so /vendor/lib/egl/libEGL_adreno.so.bak
-				$BB rm -rf/vendor/lib/egl/libEGL_adreno.so
-				$BB cp -rf /data/adb/modules/butterlimitsforop7poos11uni/system/etc/mkadp/gpucpu/egl.cfg /vendor/lib/egl/egl.cfg
-				$busybox mount -o remount,ro /vendor
-				am start -a android.intent.action.MAIN -e toasttext "This is first time after install" -n mkadp.toast/.MainActivity
-				sleep 2
-				am start -a android.intent.action.MAIN -e toasttext "Reboot is needed" -n mkadp.toast/.MainActivity
-				sleep 1
-				am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 5 secs..." -n mkadp.toast/.MainActivity
-				sleep 1
-				am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 4 secs..." -n mkadp.toast/.MainActivity
-				sleep 1
-				am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 3 secs..." -n mkadp.toast/.MainActivity
-				sleep 1
-				am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 2 secs..." -n mkadp.toast/.MainActivity
-				sleep 1
-				am start -a android.intent.action.MAIN -e toasttext "Device will reboot in 1 sec..." -n mkadp.toast/.MainActivity
-				sleep 1
-				am start -a android.intent.action.MAIN -e toasttext "Device is rebooting..." -n mkadp.toast/.MainActivity
-				sleep 1
-				reboot
+				am start -n com.mkadp.blapp/.activities.LogsActivity
+				exit 0
 			fi
 		fi
 	fi
