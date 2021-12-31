@@ -204,7 +204,7 @@ $BB mount -o remount,rw /system
 #$pme 'com.google.android.gms/com.google.android.libraries.social.mediamonitor.MediaMonitor' | tee -a $LOG2A
 $pme 'com.google.android.gms/.location.copresence.GcmBroadcastReceiver' | tee -a $LOG2A
 $pme 'com.google.android.gms/.location.reporting.service.GcmBroadcastReceiver'
-$pme 'com.google.android.gms/.social.location.GservicesBroadcastReceiver'
+#$pme 'com.google.android.gms/.social.location.GservicesBroadcastReceiver'
 $pme 'com.google.android.gms/.update.SystemUpdateService$Receiver' | tee -a $LOG2A
 $pme 'com.google.android.gms/.update.SystemUpdateService$OtaPolicyReceiver' | tee -a $LOG2A
 $pme 'com.google.android.gms/.update.SystemUpdateService$SecretCodeReceiver' | tee -a $LOG2A
