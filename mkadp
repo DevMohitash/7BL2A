@@ -158,6 +158,13 @@ $pmd 'com.google.android.gms/.common.config.PhenotypeCheckinService'  | tee -a $
 
 am start -a android.intent.action.MAIN -e toasttext "Blocking some GMS Stuffs" -n mkadp.toast/.MainActivity
 
+mount -o remount,rw /
+mount -o remount,rw rootfs
+mount -o remount,rw /system
+$BB mount -o remount,rw /
+$BB mount -o remount,rw rootfs
+$BB mount -o remount,rw /system
+
 $pme 'com.google.android.gms/.ads.settings.AdsSettingsActivity'
 $pme 'com.google.android.gms/com.google.android.location.places.ui.aliaseditor.AliasEditorActivity' | tee -a $LOG2A
 $pme 'com.google.android.gms/com.google.android.location.places.ui.aliaseditor.AliasEditorMapActivity' | tee -a $LOG2A
@@ -234,7 +241,7 @@ $pme 'com.google.android.gms/com.google.android.location.reporting.service.Repor
 $pme 'com.google.android.gms/com.google.android.location.activity.HardwareArProviderService' | tee -a $LOG2A
 $pme 'com.google.android.gms/com.google.android.location.fused.FusedLocationService' | tee -a $LOG2A
 $pme 'com.google.android.gms/com.google.android.location.fused.service.FusedProviderService' | tee -a $LOG2A
-#$pme 'com.google.android.gms/com.google.android.location.geocode.GeocodeService' | tee -a $LOG2A
+$pme 'com.google.android.gms/com.google.android.location.geocode.GeocodeService' | tee -a $LOG2A
 $pme 'com.google.android.gms/com.google.android.location.geofencer.service.GeofenceProviderService' | tee -a $LOG2A
 $pme 'com.google.android.gms/com.google.android.location.internal.GoogleLocationManagerService' | tee -a $LOG2A
 $pme 'com.google.android.gms/com.google.android.location.places.PlaylogService' | tee -a $LOG2A
@@ -775,6 +782,13 @@ FILEBAL=$MKADPP/bal
 FILEEXT=$MKADPP/ext
 FILEEA=$MKADPP/ea
 FILEGPUBAK
+
+mount -o remount,ro /
+mount -o remount,ro rootfs
+mount -o remount,ro /system
+$BB mount -o remount,ro /
+$BB mount -o remount,ro rootfs
+$BB mount -o remount,ro /system
 
 if [ -f "$FILEBAT" ]; then
 	rm -rf $FILEBAT
