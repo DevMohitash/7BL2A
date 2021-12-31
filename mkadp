@@ -537,6 +537,8 @@ ctl /sys/class/kgsl/kgsl-3d0/bus_split 1
 ctl /sys/block/sde/queue/read_ahead_kb 1028
 ctl /sys/block/sdf/queue/read_ahead_kb 1028
 
+pkill rngd
+
 # For Idle battery Life
 ctl /sys/class/misc/boeffla_wakelock_blocker/wakelock_blocker "qcom_rx_wakelock;wlan;wlan_wow_wl;wlan_extscan_wl;netmgr_wl;NETLINK;IPA_WS;[timerfd];wlan_ipa;wlan_pno_wl;wcnss_filter_lock;IPCRTR_lpass_rx;hal_bluetooth_lock"
 
