@@ -241,9 +241,9 @@ $pme 'com.google.android.gms/.ads.social.GcmSchedulerWakeupService' | tee -a $LO
 #$pme 'com.google.android.gms/.common.analytics.CoreAnalyticsIntentService' | tee -a $LOG2A
 $pme 'com.google.android.gms/.common.stats.GmsCoreStatsService' | tee -a $LOG2A
 $pme 'com.google.android.gms/.backup.BackupStatsService' | tee -a $LOG2A
-$pme 'com.google.android.gms/.deviceconnection.service.DeviceConnectionAsyncService' | tee -a $LOG2A
-$pme 'com.google.android.gms/.deviceconnection.service.DeviceConnectionServiceBroker' | tee -a $LOG2A
-$pme 'com.google.android.gms/.wallet.service.analytics.AnalyticsIntentService' | tee -a $LOG2A
+#$pme 'com.google.android.gms/.deviceconnection.service.DeviceConnectionAsyncService' | tee -a $LOG2A
+#$pme 'com.google.android.gms/.deviceconnection.service.DeviceConnectionServiceBroker' | tee -a $LOG2A
+#$pme 'com.google.android.gms/.wallet.service.analytics.AnalyticsIntentService' | tee -a $LOG2A
 $pme 'com.google.android.gms/.checkin.CheckinService' | tee -a $LOG2A
 $pme 'com.google.android.gms/.checkin.EventLogService' | tee -a $LOG2A
 $pme 'com.google.android.gms/com.google.android.location.internal.AnalyticsUploadIntentService' | tee -a $LOG2A
